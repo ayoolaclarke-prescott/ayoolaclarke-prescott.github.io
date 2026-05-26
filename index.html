@@ -257,29 +257,50 @@ nav {
   color: var(--text-muted);
 }
 
-/* ── PROBLEM STRIP ── */
+/* ── POSITIONING STRIP ── */
 #problem {
-  
+  background: var(--gold);
+  padding: 3rem 5vw;
+  position: relative;
+  z-index: 1;
 }
 
 .problem-inner {
-  
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
 }
 
 .problem-label {
-  
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(15,27,53,0.6);
+  margin-bottom: 0.5rem;
 }
 
 .problem-stat {
-  
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1;
 }
 
 .problem-statement {
-  
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.6;
 }
 
 .problem-statement strong {
- 
+  font-weight: 600;
 }
 
 /* ── SECTION BASE ── */
@@ -1001,9 +1022,9 @@ footer {
 <div id="problem">
   <div class="problem-inner">
     <div>
-      <div class="problem-label">The Governance Gap · T&T Organisations</div>
+      <div class="problem-label">The Governance Gap · T&amp;T Organisations</div>
       <div class="problem-stat">52%</div>
-      <div class="problem-label" style="margin-top:0.5rem;">of T&T workers say their employer does not prioritise psychological well-being , the human layer that governance depends on.*</div>
+      <div class="problem-label" style="margin-top:0.5rem;">of T&amp;T workers say their employer does not prioritise psychological well-being, the human layer that governance depends on.*</div>
     </div>
     <p class="problem-statement">
       Most organisations invest in IT security while leaving the <strong>human architecture of information governance</strong> almost entirely unaddressed. They fix the firewall and ignore the behaviour behind it. That is the gap. And that is where I work.
@@ -1145,7 +1166,7 @@ footer {
       </div>
       <div class="service-card reveal reveal-delay-4">
   <div class="service-num">04</div>
-  <h3 class="service-name">Anonymisation & Information Governance Design</h3>
+  <h3 class="service-name">Anonymisation &amp; Information Governance Design</h3>
   <p class="service-desc">Specialist advisory for organisations that handle sensitive personal data and need to build or audit their anonymisation methodology, access controls, and information lifecycle governance from the ground up.</p>
   <ul class="service-includes">
     <li>Anonymisation methodology design and review</li>
@@ -1178,10 +1199,10 @@ footer {
         <div class="proof-num">3.65</div>
         <div class="proof-label">GPA — BSc. Information Science. Graduated Magna Cum Laude.</div>
       </div>
-    <div class="proof-stat reveal reveal-delay-3">
-  <div class="proof-num">7+
-    
-The number 7+ (February 2018 to present) is specific to the anonymisation role. It converts a general tenure claim into a specialist credential stat. "Architect of the methodology" is a more authority-building phrase than "years in a sensitive environment."
+      <div class="proof-stat reveal reveal-delay-3">
+        <div class="proof-num">7+</div>
+        <div class="proof-label">Years as architect of T&amp;T Judiciary's anonymisation methodology — built from the ground up.</div>
+      </div>
       <div class="proof-stat reveal reveal-delay-4">
         <div class="proof-num">3</div>
         <div class="proof-label">Disciplines integrated into one practitioner: psychology, governance, legal literacy.</div>
@@ -1248,7 +1269,7 @@ The number 7+ (February 2018 to present) is specific to the anonymisation role. 
     <div class="reveal">
       <div class="section-eyebrow">Contact</div>
       <h2 class="section-title">Let's close<br>the <em>gap</em> together.</h2>
-      <p class="section-body">Whether you are a CHRO preparing for DPA enforcement,Whether you are a CHRO preparing for DPA enforcement, a CEO who has seen what a governance failure looks like at scale and asked "do we have a protocol for that?", or a legal team that needs to understand what genuine anonymisation requires , this is the conversation to have. or a legal team that needs to understand what genuine anonymisation requires , this is the conversation to have.</p>
+      <p class="section-body">Whether you are a CHRO preparing for DPA enforcement, a CEO who has seen what a governance failure looks like at scale and asked "do we have a protocol for that?", or a legal team that needs to understand what genuine anonymisation requires, this is the conversation to have.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal reveal-delay-1">
@@ -1295,7 +1316,8 @@ The number 7+ (February 2018 to present) is specific to the anonymisation role. 
             <option value="">Select a service...</option>
             <option>Governance-Psychology Audit</option>
             <option>Behaviourally Grounded Staff Training</option>
-            <option>Executive Advisory & Consulting</option>
+            <option>Executive Advisory &amp; Consulting</option>
+            <option>Anonymisation &amp; Information Governance Design</option>
             <option>Speaking Engagement</option>
             <option>The Whitepaper</option>
             <option>General Enquiry</option>
@@ -1376,3 +1398,4 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 </script>
 </body>
 </html>
+

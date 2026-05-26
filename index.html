@@ -259,48 +259,27 @@ nav {
 
 /* ── PROBLEM STRIP ── */
 #problem {
-  background: var(--gold);
-  padding: 3rem 5vw;
-  position: relative;
-  z-index: 1;
+  
 }
 
 .problem-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: center;
+  
 }
 
 .problem-label {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(15,27,53,0.6);
-  margin-bottom: 0.5rem;
+  
 }
 
 .problem-stat {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1;
+  
 }
 
 .problem-statement {
-  font-family: var(--serif);
-  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-  font-weight: 400;
-  color: var(--navy);
-  line-height: 1.6;
+  
 }
 
 .problem-statement strong {
-  font-weight: 600;
+ 
 }
 
 /* ── SECTION BASE ── */
@@ -526,7 +505,7 @@ section {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 3.5rem;
 }
@@ -999,7 +978,7 @@ footer {
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section id="hero">
   <div class="hero-bg-text">GAP</div>
-  <div class="hero-eyebrow">Trinidad &amp; Tobago · Business Psychology · Information Governance</div>
+  <div class="hero-eyebrow">Business Psychologist · Anonymisation Specialist · Information Governance · Trinidad & Tobago</div>
   <h1 class="hero-headline">
     Closing the<br>
     <em>Governance-Psychology Gap</em><br>
@@ -1018,30 +997,30 @@ footer {
   </div>
 </section>
 
-<!-- ═══════════════════════════════ PROBLEM STRIP ═══════════════════════════════ -->
+<!-- ═══════════════════════════════ POSITIONING STRIP ═══════════════════════════════ -->
 <div id="problem">
   <div class="problem-inner">
     <div>
-      <div class="problem-label">The TSTT Breach · 2023</div>
-      <div class="problem-stat">1.2M+</div>
-      <div class="problem-label" style="margin-top:0.5rem;">Customer records exposed. Three executives. One breach.</div>
+      <div class="problem-label">The Governance Gap · T&T Organisations</div>
+      <div class="problem-stat">52%</div>
+      <div class="problem-label" style="margin-top:0.5rem;">of T&T workers say their employer does not prioritise psychological well-being , the human layer that governance depends on.*</div>
     </div>
     <p class="problem-statement">
-      It was <strong>not an IT failure.</strong> It was a human one- a failure of protocol, culture, and the behavioural architecture that determines whether governance frameworks are actually followed. Most organisations in T&amp;T are still making the same assumption that made TSTT vulnerable.
+      Most organisations invest in IT security while leaving the <strong>human architecture of information governance</strong> almost entirely unaddressed. They fix the firewall and ignore the behaviour behind it. That is the gap. And that is where I work.
     </p>
   </div>
 </div>
-
+<!-- *Source: Chief Personnel Officer Survey, T&T Public Service -->
 <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
 <section id="about">
   <div class="section-wrap">
     <div class="about-grid">
       <div class="about-text reveal">
         <div class="section-eyebrow">About</div>
-        <h2 class="section-title">The only practitioner in Trindad &amp;Tobago at this <em>intersection.</em></h2>
+      <h2 class="section-title">Business Psychology and<br>Information Governance as<br><em>one integrated discipline.</em></h2>
         <p>I am a Business Psychologist and Anonymisation Specialist with over a decade of progressive experience in judicial anonymisation, information governance, and organisational leadership in Trinidad and Tobago.</p>
         <p>Since 2018, I have served as Anonymisation &amp; Redacting Specialist within the Judiciary of the Republic of Trinidad and Tobago , a role  <strong>architected from the ground up.</strong> I designed the Organisation's anonymisation methodology, developed end-to-end policies and operational systems for the protection of sensitive court documentation, and built multi-layered access authorisation structures for one of this country's most sensitive information environments.</p>
-        <p>Through my independent consulting practice, I provide Business Psychology and Information Governance advisory services to organisations and individuals seeking to build both the structural frameworks and the human cultures that responsible data stewardship requires. That combination; behavioural science and information governance as a single integrated discipline is what I bring that no one else in T&amp;T currently offers.</p>
+       <p>Through my independent consulting practice, I offer what no other practitioner in Trinidad and Tobago currently provides: <strong>Business Psychology and Information Governance as a single, integrated discipline.</strong> This means your governance frameworks are designed and audited not just for structural compliance, but for the behavioural and psychological realities that determine whether they are actually followed.</p>
         <p style="margin-top:1.5rem;">
           <a href="#contact" class="btn-primary" style="font-size:0.78rem;">Start the Conversation →</a>
         </p>
@@ -1124,7 +1103,7 @@ footer {
   <div class="section-wrap">
     <div class="services-header reveal">
       <div class="section-eyebrow">Services</div>
-      <h2 class="section-title" style="color:var(--navy);">Three ways I close<br><em>the gap</em> for your organisation.</h2>
+     <h2 class="section-title" style="color:var(--navy);">How I close<br><em>the gap</em> for your organisation.</h2>
       <p class="section-body" style="color:var(--text-body);">Every engagement is grounded in behavioural science, informed by over a decade of practitioner experience, and calibrated to the specific realities of Trinidad &amp;Tobago's organisational landscape.</p>
     </div>
     <div class="services-grid">
@@ -1164,6 +1143,18 @@ footer {
           <li>Speaking engagements and workshops</li>
         </ul>
       </div>
+      <div class="service-card reveal reveal-delay-4">
+  <div class="service-num">04</div>
+  <h3 class="service-name">Anonymisation & Information Governance Design</h3>
+  <p class="service-desc">Specialist advisory for organisations that handle sensitive personal data and need to build or audit their anonymisation methodology, access controls, and information lifecycle governance from the ground up.</p>
+  <ul class="service-includes">
+    <li>Anonymisation methodology design and review</li>
+    <li>Re-identification risk assessment</li>
+    <li>Access authorisation structure design</li>
+    <li>Records classification and lifecycle policy</li>
+    <li>DPA 2011 compliance readiness assessment</li>
+  </ul>
+</div>
     </div>
     <p style="margin-top:3rem; text-align:center;" class="reveal">
       <a href="#contact" class="btn-primary" style="font-size:0.82rem;">Discuss Your Organisation's Needs →</a>
@@ -1187,10 +1178,10 @@ footer {
         <div class="proof-num">3.65</div>
         <div class="proof-label">GPA — BSc. Information Science. Graduated Magna Cum Laude.</div>
       </div>
-      <div class="proof-stat reveal reveal-delay-3">
-        <div class="proof-num">11+</div>
-        <div class="proof-label">Years in the Judiciary of T&amp;T's most sensitive information environment.</div>
-      </div>
+    <div class="proof-stat reveal reveal-delay-3">
+  <div class="proof-num">7+
+    
+The number 7+ (February 2018 to present) is specific to the anonymisation role. It converts a general tenure claim into a specialist credential stat. "Architect of the methodology" is a more authority-building phrase than "years in a sensitive environment."
       <div class="proof-stat reveal reveal-delay-4">
         <div class="proof-num">3</div>
         <div class="proof-label">Disciplines integrated into one practitioner: psychology, governance, legal literacy.</div>
@@ -1240,7 +1231,8 @@ footer {
   <div class="wp-inner">
     <div class="reveal">
       <div class="wp-label">Thought Leadership · 2026</div>
-      <h2 class="wp-title">The Governance-Psychology Gap: Why Trinidad &amp;Tobago's Organisations Are Exposed: And What to Do About It</h2>
+      <h2 class="wp-title">The Governance-Psychology Gap</h2>
+<p style="font-size:0.85rem; color:rgba(15,27,53,0.55); font-family:var(--mono); letter-spacing:0.08em; margin-bottom:0.8rem; text-transform:uppercase;">Why Trinidad &amp; Tobago's Organisations Are Exposed : And What to Do About It</p>
       <p class="wp-sub">A full whitepaper examining T&amp;T's data protection landscape, the human architecture of data risk, and the four disciplines required to close the gap. Required reading for any CHRO, Legal Counsel, or CEO operating in a data-sensitive environment right now.</p>
     </div>
     <div class="reveal reveal-delay-2" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
@@ -1256,7 +1248,7 @@ footer {
     <div class="reveal">
       <div class="section-eyebrow">Contact</div>
       <h2 class="section-title">Let's close<br>the <em>gap</em> together.</h2>
-      <p class="section-body">Whether you are a CHRO preparing for DPA enforcement, a CEO who watched the TSTT story and asked "do we have a protocol for that?", or a legal team that needs to understand what genuine anonymisation requires , this is the conversation to have.</p>
+      <p class="section-body">Whether you are a CHRO preparing for DPA enforcement,Whether you are a CHRO preparing for DPA enforcement, a CEO who has seen what a governance failure looks like at scale and asked "do we have a protocol for that?", or a legal team that needs to understand what genuine anonymisation requires , this is the conversation to have. or a legal team that needs to understand what genuine anonymisation requires , this is the conversation to have.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal reveal-delay-1">
@@ -1326,7 +1318,7 @@ footer {
 <footer>
   <div class="footer-inner">
     <div class="footer-name">Ayoola <span>Clarke-Prescott</span></div>
-    <p class="footer-copy">© 2025 Ayoola Clarke-Prescott. All rights reserved. Trinidad &amp; Tobago.</p>
+   <p class="footer-copy">© 2026 Ayoola Clarke-Prescott. All rights reserved. Trinidad &amp; Tobago.</p>
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>

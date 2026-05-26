@@ -1291,7 +1291,7 @@ footer {
         </div>
         <p class="contact-note">Initial consultations are 30 minutes. Bring your most pressing question about data governance, anonymisation practice, or organisational culture. I will tell you exactly what I see and what I would recommend.</p>
       </div>
-      <form class="contact-form reveal reveal-delay-2" onsubmit="handleSubmit(event)">
+      <form class="contact-form" action="https://formspree.io/f/mpqnojpb" method="POST">
         <div class="form-grid">
           <div class="form-group">
             <label class="form-label" for="fname">First Name</label>
@@ -1378,11 +1378,7 @@ function toggleMenu() {
 }
 
 // Form submit
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById('form-success').style.display = 'block';
-  e.target.querySelector('button[type=submit]').style.display = 'none';
-}
+
 
 // Smooth nav active state
 document.querySelectorAll('a[href^="#"]').forEach(a => {

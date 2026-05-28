@@ -1326,24 +1326,24 @@ footer {
         <div class="form-grid">
           <div class="form-group">
             <label class="form-label" for="fname">First Name</label>
-            <input class="form-input" type="text" id="fname" placeholder="Your first name" required>
+            <input class="form-input" type="text" name="first_name" placeholder="Your first name" required>
           </div>
           <div class="form-group">
             <label class="form-label" for="lname">Last Name</label>
-            <input class="form-input" type="text" id="lname" placeholder="Your last name" required>
+            <input class="form-input" type="text" name="last_name" placeholder="Your last name" required>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label" for="email">Email Address</label>
-          <input class="form-input" type="email" id="email" placeholder="your@organisation.com" required>
+          <input class="form-input" type="email" name="email" placeholder="your@organisation.com" required>
         </div>
         <div class="form-group">
           <label class="form-label" for="org">Organisation</label>
-          <input class="form-input" type="text" id="org" placeholder="Your organisation name">
+          <input class="form-input" type="text" name="organisation" placeholder="Your organisation name">
         </div>
         <div class="form-group">
           <label class="form-label" for="service">I'm interested in</label>
-          <select class="form-select" id="service">
+          <select class="form-select" name="service">
             <option value="">Select a service...</option>
             <option>Governance-Psychology Audit</option>
             <option>Behaviourally Grounded Staff Training</option>
@@ -1356,7 +1356,7 @@ footer {
         </div>
         <div class="form-group">
           <label class="form-label" for="message">Tell me about your situation</label>
-          <textarea class="form-textarea" id="message" placeholder="What's the most pressing challenge your organisation is facing around data governance or people management right now?"></textarea>
+          <textarea class="form-textarea" name="message" placeholder="What's the most pressing challenge your organisation is facing around data governance or people management right now?"></textarea>
         </div>
         <button type="submit" class="btn-primary" style="width:100%; text-align:center; border:none; cursor:pointer; font-family:var(--sans);">Send Message →</button>
         <div id="form-success" style="display:none; background:rgba(196,154,42,0.1); border:1px solid rgba(196,154,42,0.3); border-radius:2px; padding:1rem; font-size:0.85rem; color:var(--gold); text-align:center;">

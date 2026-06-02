@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Psychological Safety Pulse | Ayoola Clarke-Prescott</title>
+<meta name="description" content="Free 5-minute diagnostic. Discover your psychological safety profile across 5 dimensions grounded in neuroscience. Individual, team and corporate pathways.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+
 :root {
   --midnight: #0a0e1a;
   --deep-navy: #0f1829;
@@ -538,10 +540,376 @@ h1 em { font-style: italic; color: var(--accent-light); }
   .scale-option { font-size: 14px; }
   .tier-grid { gap: 12px; }
 }
+
+
+/* ---- LANDING PAGE ADDITIONS ---- */
+html { scroll-behavior: smooth; }
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,14,26,0.93);
+  backdrop-filter: blur(16px);
+}
+.header-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: var(--midnight);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; padding: 10px 20px;
+  border-radius: 5px; border: none; cursor: pointer;
+  text-transform: uppercase; text-decoration: none;
+  transition: all 0.2s;
+}
+.header-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
+.animate { animation: fadeUp 0.7s ease forwards; opacity: 0; }
+.delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.25s}.delay-3{animation-delay:0.4s}
+.delay-4{animation-delay:0.55s}.delay-5{animation-delay:0.7s}
+.hero-page { padding: 96px 0 72px; }
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before { content:''; display:block; width:28px; height:1px; background:var(--accent); }
+.hero-page h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 8vw, 80px); font-weight: 300;
+  line-height: 1.02; letter-spacing: -0.015em; margin-bottom: 6px;
+}
+.hero-page h1 em { font-style: italic; color: var(--accent-light); }
+.hero-page .sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(17px, 3vw, 24px); font-weight: 300;
+  font-style: italic; color: var(--text-secondary);
+  margin-bottom: 24px; line-height: 1.4;
+}
+.hero-page .body {
+  font-size: 15px; color: var(--text-secondary);
+  line-height: 1.8; max-width: 560px; margin-bottom: 44px;
+}
+.hero-page .body strong { color: var(--text-primary); font-weight: 500; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.btn-outline {
+  background: transparent; color: var(--accent);
+  border: 1px solid var(--accent); font-weight: 500;
+}
+.btn-outline:hover { background: var(--accent-pale); box-shadow: none; }
+.stat-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border-dim);
+  border: 1px solid var(--border-dim); border-radius: 12px;
+  overflow: hidden; margin: 56px 0;
+}
+@media(max-width:600px){.stat-row{grid-template-columns:1fr;}}
+.stat-cell { background: var(--glass); padding: 28px 24px; backdrop-filter: blur(8px); }
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px; font-weight: 300;
+  color: var(--accent-light); line-height: 1; margin-bottom: 6px;
+}
+.stat-label { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+.lp-section { padding: 64px 0; }
+.lp-eyebrow {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.lp-eyebrow::after { content:''; flex:1; height:1px; background:var(--border-dim); }
+.lp-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 5vw, 42px); font-weight: 300;
+  line-height: 1.15; margin-bottom: 14px;
+}
+.lp-section h2 em { font-style: italic; color: var(--accent-light); }
+.lp-intro { font-size: 14px; color: var(--text-secondary); line-height: 1.8; max-width: 560px; margin-bottom: 44px; }
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media(max-width:600px){.features-grid{grid-template-columns:1fr;}}
+.feature-card {
+  background: var(--glass); border: 1px solid var(--border-dim);
+  border-radius: 12px; padding: 28px;
+  backdrop-filter: blur(8px); transition: border-color 0.3s, transform 0.3s;
+}
+.feature-card:hover { border-color: var(--border); transform: translateY(-2px); }
+.feature-icon { font-size: 24px; margin-bottom: 14px; }
+.feature-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 400; margin-bottom: 8px;
+}
+.feature-text { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+.tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media(max-width:700px){.tiers-grid{grid-template-columns:1fr;}}
+.tier-preview {
+  background: var(--glass); border: 1px solid var(--border-dim);
+  border-radius: 12px; padding: 28px 24px;
+  backdrop-filter: blur(8px); transition: all 0.3s;
+  position: relative; overflow: hidden;
+}
+.tier-preview::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity:0; transition: opacity 0.3s;
+}
+.tier-preview:hover { border-color: var(--border); transform: translateY(-3px); }
+.tier-preview:hover::before { opacity: 1; }
+.tier-preview-icon { font-size: 26px; margin-bottom: 14px; }
+.tier-preview-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; margin-bottom: 6px;
+}
+.tier-preview-who {
+  font-family: 'DM Mono', monospace; font-size: 9px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 10px;
+}
+.tier-preview-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.65; }
+.tier-preview-meta {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: var(--text-dim); margin-top: 16px; letter-spacing: 0.08em;
+}
+.science-block {
+  padding: 48px; background: var(--glass);
+  border: 1px solid var(--border-dim); border-radius: 16px;
+  margin: 0 0 64px; backdrop-filter: blur(8px);
+}
+@media(max-width:600px){.science-block{padding:28px 20px;}}
+.science-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; margin-top: 32px; }
+@media(max-width:600px){.science-grid{grid-template-columns:1fr;}}
+.sci-title { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:400; color:var(--accent-light); margin-bottom:8px; }
+.sci-text { font-size:13px; color:var(--text-secondary); line-height:1.7; }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 2fr;
+  gap: 44px; align-items: start;
+  padding: 64px 0;
+  border-top: 1px solid var(--border-dim);
+}
+@media(max-width:640px){.about-grid{grid-template-columns:1fr;gap:28px;}}
+.about-card {
+  background: var(--glass); border: 1px solid var(--border-dim);
+  border-radius: 12px; padding: 28px; backdrop-filter: blur(8px);
+}
+.about-name { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:400; margin-bottom:6px; }
+.about-title {
+  font-family:'DM Mono',monospace; font-size:9px;
+  letter-spacing:0.15em; text-transform:uppercase;
+  color:var(--accent); line-height:1.8;
+}
+.about-badges { margin-top:18px; display:flex; flex-direction:column; gap:8px; }
+.badge {
+  font-family:'DM Mono',monospace; font-size:10px;
+  padding:6px 12px; background:var(--accent-pale);
+  border:1px solid var(--border); border-radius:4px;
+  color:var(--accent-light); letter-spacing:0.06em;
+}
+.about-body h3 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px; font-weight:300; margin-bottom:14px;
+}
+.about-body h3 em { font-style:italic; color:var(--accent-light); }
+.about-body p { font-size:14px; color:var(--text-secondary); line-height:1.8; margin-bottom:14px; }
+.about-body p strong { color:var(--text-primary); font-weight:500; }
+.capture-block {
+  padding: 52px; text-align: center;
+  background: linear-gradient(135deg, rgba(201,169,110,0.1), rgba(21,34,56,0.9));
+  border: 1px solid var(--border); border-radius: 16px; margin-bottom: 72px;
+}
+@media(max-width:600px){.capture-block{padding:32px 20px;}}
+.capture-block h3 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(22px,4vw,34px); font-weight:300; margin-bottom:10px;
+}
+.capture-block h3 em { font-style:italic; color:var(--accent-light); }
+.capture-block p { font-size:14px; color:var(--text-secondary); line-height:1.75; max-width:440px; margin:0 auto 28px; }
+.capture-form { display:flex; gap:12px; max-width:480px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
+.capture-input {
+  flex:1; min-width:190px;
+  background: rgba(240,236,228,0.06);
+  border: 1px solid var(--border); border-radius:6px;
+  padding: 13px 18px;
+  font-family:'Outfit',sans-serif; font-size:14px;
+  color:var(--text-primary); outline:none;
+  transition: border-color 0.2s;
+}
+.capture-input::placeholder { color:var(--text-dim); }
+.capture-input:focus { border-color:var(--accent); }
+.capture-note { font-family:'DM Mono',monospace; font-size:10px; color:var(--text-dim); letter-spacing:0.08em; margin-top:14px; }
+.capture-success { display:none; font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--accent-light); margin-top:8px; }
+.tool-divider { text-align:center; padding:40px 0 12px; border-top:1px solid var(--border-dim); }
+.tool-divider-label {
+  font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.3em;
+  text-transform:uppercase; color:var(--text-dim);
+  display:inline-block; padding:8px 24px;
+  border:1px solid var(--border-dim); border-radius:20px;
+}
 </style>
 </head>
 <body>
+<div class="bg-layer"></div>
+<div class="grid-overlay"></div>
 
+<!-- STICKY HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div>
+      <div class="brand-mark">Ayoola Clarke-Prescott</div>
+      <div class="brand-sub">MSc. Business Psychology &middot; Anonymisation Specialist &middot; Business Psychology Consultant</div>
+    </div>
+    <a href="#tool" class="header-cta">Take the Pulse</a>
+  </div>
+</header>
+
+<!-- ====================== LANDING PAGE ====================== -->
+<div id="landing-page">
+
+  <section class="hero-page">
+    <div class="container">
+      <div class="hero-eyebrow animate delay-1">Free Diagnostic Tool &middot; Business Psychology</div>
+      <h1 class="animate delay-2">Psychological<br><em>Safety Pulse</em></h1>
+      <p class="sub animate delay-2">Your team's performance ceiling is not their talent.<br>It is how safe they feel to use it.</p>
+      <p class="body animate delay-3">
+        Google's Project Aristotle studied hundreds of teams to find what makes some soar and others stall. The answer was not talent, resources, or strategy. It was <strong>psychological safety.</strong> This free diagnostic measures yours across five scientifically grounded dimensions and tells you exactly what to do about what it finds.
+      </p>
+      <div class="hero-actions animate delay-4">
+        <a href="#tool" class="btn">Take the Free Assessment</a>
+        <a href="#what-you-get" class="btn btn-outline">See What You Get</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container animate delay-5">
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Scientifically grounded dimensions measured</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Pathways: Individual, Team, and Corporate</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">52%</div>
+        <div class="stat-label">of T&T workers say their employer ignores psychological wellbeing</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="lp-section" id="what-you-get">
+    <div class="container">
+      <div class="lp-eyebrow">What You Receive</div>
+      <h2>A diagnostic that goes <em>beyond a score</em></h2>
+      <p class="lp-intro">Most assessments give you a number and leave you to figure out what to do with it. This one gives you a complete picture: where you are, why it matters neurologically, and the specific actions with the highest impact.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#128202;</div>
+          <div class="feature-title">Safety Profile Score</div>
+          <div class="feature-text">An overall psychological safety score out of 100, calibrated against five dimensions and presented with an animated visual profile you can read at a glance.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128378;</div>
+          <div class="feature-title">Radar Map Visualisation</div>
+          <div class="feature-text">A radar chart showing the exact shape of your safety profile across all five dimensions simultaneously. Your strengths and gaps become immediately visible.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#129518;</div>
+          <div class="feature-title">Named Archetype</div>
+          <div class="feature-text">A precisely characterised safety archetype drawn from the research literature, describing not just where you are but the psychological and organisational dynamics driving your profile.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#127919;</div>
+          <div class="feature-title">Three Priority Recommendations</div>
+          <div class="feature-text">Targeted, evidence-based recommendations for your three lowest-scoring dimensions, written at practitioner level and immediately actionable.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-section" style="padding-top:0">
+    <div class="container">
+      <div class="lp-eyebrow">Choose Your Pathway</div>
+      <h2>Built for every <em>context and scale</em></h2>
+      <p class="lp-intro">The same five dimensions. Three completely different question sets, scoring frameworks, and output interpretations built for the specific context you are operating in.</p>
+      <div class="tiers-grid">
+        <div class="tier-preview">
+          <div class="tier-preview-icon">&#128100;</div>
+          <div class="tier-preview-name">Individual</div>
+          <div class="tier-preview-who">For professionals</div>
+          <div class="tier-preview-desc">Understand how psychological safety shows up in your own behaviour, communication patterns, and professional relationships. Discover which conditions are suppressing your authentic contribution.</div>
+          <div class="tier-preview-meta">15 questions &middot; 5 minutes</div>
+        </div>
+        <div class="tier-preview">
+          <div class="tier-preview-icon">&#128101;</div>
+          <div class="tier-preview-name">Small Business</div>
+          <div class="tier-preview-who">For leaders and owners</div>
+          <div class="tier-preview-desc">Diagnose the safety culture driving your team's performance, retention, and risk exposure. See exactly where honest communication is being suppressed and what it is costing you.</div>
+          <div class="tier-preview-meta">20 questions &middot; 7 minutes</div>
+        </div>
+        <div class="tier-preview">
+          <div class="tier-preview-icon">&#127963;</div>
+          <div class="tier-preview-name">Corporate</div>
+          <div class="tier-preview-who">For CHROs and senior leaders</div>
+          <div class="tier-preview-desc">Assess the psychological safety architecture across your organisation. Understand how safety culture is shaping your governance risk, information flow, and leadership effectiveness.</div>
+          <div class="tier-preview-meta">25 questions &middot; 10 minutes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="science-block">
+      <div class="lp-eyebrow">The Science Behind It</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,4vw,34px);font-weight:300;">Grounded in <em>research, not opinion</em></h2>
+      <div class="science-grid">
+        <div><div class="sci-title">Edmondson's Psychological Safety Research</div><div class="sci-text">Harvard Business School professor Amy Edmondson's foundational research established psychological safety as a team-level phenomenon with measurable, predictable effects on performance, learning, and innovation.</div></div>
+        <div><div class="sci-title">Google's Project Aristotle</div><div class="sci-text">Google's landmark study of 180 internal teams found psychological safety to be the single most important factor in team effectiveness, outweighing individual talent, team composition, and management quality.</div></div>
+        <div><div class="sci-title">SCARF Model, Neuroscience of Threat</div><div class="sci-text">David Rock's SCARF model identifies five social domains the brain monitors for threat. Low psychological safety activates threat responses across all five, degrading cognitive function and communication quality.</div></div>
+        <div><div class="sci-title">Behavioural Economics of Protocol Compliance</div><div class="sci-text">Research demonstrates that governance protocol adherence is not primarily a matter of training or policy. It is a function of the psychological environment in which decisions are made.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-name">Ayoola Clarke-Prescott</div>
+        <div class="about-title">Business Psychology Consultant<br>Anonymisation Specialist<br>Trinidad and Tobago</div>
+        <div class="about-badges">
+          <div class="badge">MSc. Business Psychology, 4.0 GPA</div>
+          <div class="badge">Franklin University, Ohio</div>
+          <div class="badge">BSc. Information Science, Magna Cum Laude</div>
+          <div class="badge">Judiciary of T&T, Anonymisation Specialist</div>
+        </div>
+      </div>
+      <div class="about-body">
+        <h3>Built by a practitioner, not a <em>platform</em></h3>
+        <p>This tool was designed by a Business Psychologist with over a decade of direct experience in high-stakes institutional environments where the cost of low psychological safety is not abstract. It is a breach left unreported. A concern left unraised. A protocol violation left unaddressed.</p>
+        <p><strong>The Governance-Psychology Gap</strong> is a published framework identifying the space between an organisation's formal data governance structure and the human culture that determines whether that structure is actually followed. Psychological safety sits at the centre of that gap.</p>
+        <a href="mailto:anonspectt@gmail.com" class="btn btn-outline" style="margin-top:8px;">Book a Consultation</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="capture-block">
+      <h3>Get notified when new <em>tools launch</em></h3>
+      <p>Two more diagnostics are in development: the Anonymisation Readiness Scorecard and the Governance-Psychology Gap Index. Leave your email to be first.</p>
+      <form class="capture-form" onsubmit="handleCapture(event)">
+        <input class="capture-input" type="text" name="fname" placeholder="Your first name" required>
+        <input class="capture-input" type="email" name="email" placeholder="Your work email" required>
+        <button type="submit" class="btn">Notify Me</button>
+      </form>
+      <div class="capture-note">No spam. One email when the next tool is ready.</div>
+      <div class="capture-success" id="capture-success">Thank you. You will hear from me when the next tool is live.</div>
+    </div>
+  </div>
+
+</div>
+<!-- END LANDING PAGE -->
+
+<div class="tool-divider" id="tool">
+  <span class="tool-divider-label">Begin Your Assessment Below</span>
+</div>
+
+<!-- ====================== TOOL ====================== -->
 <div class="bg-layer"></div>
 <div class="grid-overlay"></div>
 
@@ -680,797 +1048,8 @@ h1 em { font-style: italic; color: var(--accent-light); }
     <div class="cta-section">
       <h3>Your <em>next step</em> is a conversation.</h3>
       <p>This diagnostic identifies your psychological safety profile. Closing the gaps it reveals requires deliberate, evidence-based intervention. That is precisely what I do.</p>
- <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">
-  Enter your details to book a free 20-minute debrief of your results.
-</p>
-
-<div id="mc_embed_shell">
-      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
-        #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-    <form action="https://github.us12.list-manage.com/subscribe/post?u=bc92411c2ea1338f6ee1bae30&amp;id=a4a36667d3&amp;f_id=00fcbbe0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-        <div id="mc_embed_signup_scroll"><h2>Get Your Full Results PDF</h2>
-            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div><div class="mc-field-group"><label for="mce-FNAME">First Name </label><input type="text" name="FNAME" class=" text" id="mce-FNAME" value=""></div>
-        <div id="mce-responses" class="clear foot">
-            <div class="response" id="mce-error-response" style="display: none;"></div>
-            <div class="response" id="mce-success-response" style="display: none;"></div>
-        </div>
-    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-        <input type="text" name="b_bc92411c2ea1338f6ee1bae30_a4a36667d3" tabindex="-1" value="">
-    </div>
-        <div class="optionalParent">
-            <div class="clear foot">
-                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                <p style="margin: 0px auto;"><a href="http://eepurl.com/UZ5pZ57ONp" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
-            </div>
-        </div>
-    </div>
-</form>
-</div>
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
-    // SMS Phone Multi-Country Functionality
-    if(!window.MC) {
-      window.MC = {};
-    }
-    window.MC.smsPhoneData = {
-      defaultCountryCode: 'TT',
-      programs: [],
-      smsProgramDataCountryNames: []
-    };
-
-    function getCountryUnicodeFlag(countryCode) {
-       return countryCode.toUpperCase().replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397))
-    };
-
-    // HTML sanitization function to prevent XSS
-    function sanitizeHtml(str) {
-      if (typeof str !== 'string') return '';
-      return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#x27;')
-        .replace(/\//g, '&#x2F;');
-    }
-
-    // URL sanitization function to prevent javascript: and data: URLs
-    function sanitizeUrl(url) {
-      if (typeof url !== 'string') return '';
-      const trimmedUrl = url.trim().toLowerCase();
-      if (trimmedUrl.startsWith('javascript:') || trimmedUrl.startsWith('data:') || trimmedUrl.startsWith('vbscript:')) {
-        return '#';
-      }
-      return url;
-    }
-
-    const getBrowserLanguage = () => {
-      if (!window?.navigator?.language?.split('-')[1]) {
-        return window?.navigator?.language?.toUpperCase();
-      }
-      return window?.navigator?.language?.split('-')[1];
-    };
-
-    
-    function getDefaultCountryProgram(defaultCountryCode, smsProgramData) {
-      if (!smsProgramData || smsProgramData.length === 0) {
-        return null;
-      }
-
-      const browserLanguage = getBrowserLanguage();
-
-      if (browserLanguage) {
-        const foundProgram = smsProgramData.find(
-          (program) => program?.countryCode === browserLanguage,
-        );
-        if (foundProgram) {
-          return foundProgram;
-        }
-      }
-
-      if (defaultCountryCode) {
-        const foundProgram = smsProgramData.find(
-          (program) => program?.countryCode === defaultCountryCode,
-        );
-        if (foundProgram) {
-          return foundProgram;
-        }
-      }
-
-      return smsProgramData[0];
-    }
-
-    function updateSmsLegalText(countryCode, fieldName) {
-      if (!countryCode || !fieldName) {
-        return;
-      }
-      
-      const programs = window?.MC?.smsPhoneData?.programs;
-      if (!programs || !Array.isArray(programs)) {
-        return;
-      }
-      
-      const program = programs.find(program => program?.countryCode === countryCode);
-      if (!program || !program.requiredTemplate) {
-        return;
-      }
-    
-      
-      var smsConsentHtmlRenderingFixEnabled = true;
-      
-      const legalTextElement = document.querySelector('#legal-text-' + fieldName);
-      if (!legalTextElement) {
-        return;
-      }
-      
-      const divRegex = new RegExp('</?[div][^>]*>', 'gi');
-      const blockWrapperRegex = new RegExp('</?(?:div|p)[^>]*>', 'gi');
-      const fullAnchorRegex = new RegExp('<a.*?</a>', 'g');
-      const anchorRegex = new RegExp('<a href="(.*?)" target="(.*?)">(.*?)</a>');
-      
-      const template = smsConsentHtmlRenderingFixEnabled
-        ? program.requiredTemplate
-            .replace(/<\/p>\s*<p[^>]*>/gi, ' ')
-            .replace(blockWrapperRegex, '')
-        : program.requiredTemplate.replace(divRegex, '');
-      
-      
-
-      legalTextElement.textContent = '';
-      const parts = template.split(/(<a href=".*?" target=".*?">.*?<\/a>)/g);
-      parts.forEach(function(part) {
-        if (!part) {
-          return;
-        }
-        const anchorMatch = part.match(/<a href="(.*?)" target="(.*?)">(.*?)<\/a>/);
-        if (anchorMatch) {
-          const linkElement = document.createElement('a');
-          linkElement.href = sanitizeUrl(anchorMatch[1]);
-          linkElement.target = sanitizeHtml(anchorMatch[2]);
-          linkElement.textContent = sanitizeHtml(anchorMatch[3]);
-          legalTextElement.appendChild(linkElement);
-        } else {
-          legalTextElement.appendChild(document.createTextNode(part));
-        }
-      });
-          
-    }
-
-    function generateDropdownOptions(smsProgramData) {
-      if (!smsProgramData || smsProgramData.length === 0) {
-        return '';
-      }
-
-      var programs = false
-        ? smsProgramData.filter(function(p, i, arr) {
-            return arr.findIndex(function(q) { return q.countryCode === p.countryCode; }) === i;
-          })
-        : smsProgramData;
-      
-      return programs.map(program => {
-        const flag = getCountryUnicodeFlag(program.countryCode);
-        const countryName = getCountryName(program.countryCode);
-        const callingCode = program.countryCallingCode || '';
-        // Sanitize all values to prevent XSS
-        const sanitizedCountryCode = sanitizeHtml(program.countryCode || '');
-        const sanitizedCountryName = sanitizeHtml(countryName || '');
-        const sanitizedCallingCode = sanitizeHtml(callingCode || '');
-        return '<option value="' + sanitizedCountryCode + '">' + sanitizedCountryName + ' ' + sanitizedCallingCode + '</option>';
-      }).join('');
-    }
-
-    function getCountryName(countryCode) {
-      if (window.MC?.smsPhoneData?.smsProgramDataCountryNames && Array.isArray(window.MC.smsPhoneData.smsProgramDataCountryNames)) {
-        for (let i = 0; i < window.MC.smsPhoneData.smsProgramDataCountryNames.length; i++) {
-          if (window.MC.smsPhoneData.smsProgramDataCountryNames[i].code === countryCode) {
-            return window.MC.smsPhoneData.smsProgramDataCountryNames[i].name;
-          }
-        }
-      }
-      return countryCode;
-    }
-
-    function getDefaultPlaceholder(countryCode) {
-      if (!countryCode || typeof countryCode !== 'string') {
-        return '+1 000 000 0000'; // Default US placeholder
-      }
-      
-            var mockPlaceholders = [
-        {
-          countryCode: 'US',
-          placeholder: '+1 000 000 0000',
-          helpText: 'Include the US country code +1 before the phone number',
-        },
-        {
-          countryCode: 'GB',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the GB country code +44 before the phone number',
-        },
-        {
-          countryCode: 'CA',
-          placeholder: '+1 000 000 0000',
-          helpText: 'Include the CA country code +1 before the phone number',
-        },
-        {
-          countryCode: 'AU',
-          placeholder: '+61 000 000 000',
-          helpText: 'Include the AU country code +61 before the phone number',
-        },
-        {
-          countryCode: 'DE',
-          placeholder: '+49 000 0000000',
-          helpText: 'Fügen Sie vor der Telefonnummer die DE-Ländervorwahl +49 ein',
-        },
-        {
-          countryCode: 'FR',
-          placeholder: '+33 0 00 00 00 00',
-          helpText: 'Incluez le code pays FR +33 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'ES',
-          placeholder: '+34 000 000 000',
-          helpText: 'Incluya el código de país ES +34 antes del número de teléfono',
-        },
-        {
-          countryCode: 'NL',
-          placeholder: '+31 0 00000000',
-          helpText: 'Voeg de NL-landcode +31 toe vóór het telefoonnummer',
-        },
-        {
-          countryCode: 'BE',
-          placeholder: '+32 000 00 00 00',
-          helpText: 'Incluez le code pays BE +32 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'CH',
-          placeholder: '+41 00 000 00 00',
-          helpText: 'Fügen Sie vor der Telefonnummer die CH-Ländervorwahl +41 ein',
-        },
-        {
-          countryCode: 'AT',
-          placeholder: '+43 000 000 0000',
-          helpText: 'Fügen Sie vor der Telefonnummer die AT-Ländervorwahl +43 ein',
-        },
-        {
-          countryCode: 'IE',
-          placeholder: '+353 00 000 0000',
-          helpText: 'Include the IE country code +353 before the phone number',
-        },
-        {
-          countryCode: 'IT',
-          placeholder: '+39 000 000 0000',
-          helpText: 'Includere il prefisso internazionale IT +39 prima del numero di telefono',
-        },
-        {
-          countryCode: 'NO',
-          placeholder: '+47 000 00 000',
-          helpText: 'Inkluder NO landskode +47 før telefonnummeret',
-        },
-        {
-          countryCode: 'SE',
-          placeholder: '+46 00 000 00 00',
-          helpText: 'Inkludera SE landskod +46 före telefonnumret',
-        },
-        {
-          countryCode: 'DK',
-          placeholder: '+45 00 00 00 00',
-          helpText: 'Inkluder DK landekode +45 før telefonnummeret',
-        },
-        {
-          countryCode: 'FI',
-          placeholder: '+358 00 000 0000',
-          helpText: 'Sisällytä FI-maakoodi +358 ennen puhelinnumeroa',
-        },
-        {
-          countryCode: 'EE',
-          placeholder: '+372 0000 0000',
-          helpText: 'Lisage EE riigikood +372 telefoninumbri ette',
-        },
-        {
-          countryCode: 'PL',
-          placeholder: '+48 000 000 000',
-          helpText: 'Podaj numer kierunkowy PL +48 przed numerem telefonu',
-        },
-        {
-          countryCode: 'SK',
-          placeholder: '+421 000 000 000',
-          helpText: 'Pred telefónne číslo uveďte kód krajiny SK +421',
-        },
-        {
-          countryCode: 'LV',
-          placeholder: '+371 0000 0000',
-          helpText: 'Iekļaujiet LV valsts kodu +371 pirms tālruņa numura',
-        },
-        {
-          countryCode: 'LT',
-          placeholder: '+370 0000 0000',
-          helpText: 'Įtraukite LT šalies kodą +370 prieš telefono numerį',
-        },
-        {
-          countryCode: 'GR',
-          placeholder: '+30 000 000 0000',
-          helpText: 'Συμπεριλάβετε τον κωδικό χώρας GR +30 πριν από τον αριθμό τηλεφώνου',
-        },
-        {
-          countryCode: 'PT',
-          placeholder: '+351 000 000 000',
-          helpText: 'Inclua o código de país PT +351 antes do número de telefone',
-        },
-        {
-          countryCode: 'HR',
-          placeholder: '+385 00 000 0000',
-          helpText: 'Uključite HR pozivni broj države +385 prije telefonskog broja',
-        },
-        {
-          countryCode: 'SI',
-          placeholder: '+386 00 000 000',
-          helpText: 'Vključite SI kodo države +386 pred telefonsko številko',
-        },
-        {
-          countryCode: 'IS',
-          placeholder: '+354 000 0000',
-          helpText: 'Láttu IS landsnúmer +354 fylgja á undan símanúmerinu',
-        },
-        {
-          countryCode: 'LU',
-          placeholder: '+352 000 000 000',
-          helpText: 'Incluez le code pays LU +352 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'MC',
-          placeholder: '+377 00 00 00 00',
-          helpText: 'Incluez le code pays MC +377 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'AD',
-          placeholder: '+376 000 000',
-          helpText: 'Incloeu el codi de país AD +376 abans del número de telèfon',
-        },
-        {
-          countryCode: 'JE',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the JE country code +44 before the phone number',
-        },
-        {
-          countryCode: 'IM',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the IM country code +44 before the phone number',
-        },
-        {
-          countryCode: 'GG',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the GG country code +44 before the phone number',
-        },
-        {
-          countryCode: 'AL',
-          placeholder: '+355 00 000 0000',
-          helpText: 'Përfshini kodin e vendit AL +355 para numrit të telefonit',
-        },
-        {
-          countryCode: 'SM',
-          placeholder: '+378 0000 000000',
-          helpText: 'Includere il prefisso internazionale SM +378 prima del numero di telefono',
-        },
-        {
-          countryCode: 'FO',
-          placeholder: '+298 000000',
-          helpText: 'Inkluder FO landekode +298 før telefonnummeret',
-        },
-        {
-          countryCode: 'MT',
-          placeholder: '+356 0000 0000',
-          helpText: 'Include the MT country code +356 before the phone number',
-        },
-        {
-          countryCode: 'LI',
-          placeholder: '+423 000 0000',
-          helpText: 'Fügen Sie vor der Telefonnummer die LI-Ländervorwahl +423 ein',
-        },
-        {
-          countryCode: 'GI',
-          placeholder: '+350 000 00000',
-          helpText: 'Include the GI country code +350 before the phone number',
-        },
-        {
-          countryCode: 'MD',
-          placeholder: '+373 00 000 000',
-          helpText: 'Includeți codul de țară MD +373 înaintea numărului de telefon',
-        },
-        {
-          countryCode: 'HU',
-          placeholder: '+36 00 000 0000',
-          helpText: 'A telefonszám előtt adja meg a HU országkódot +36',
-        },
-        {
-          countryCode: 'NZ',
-          placeholder: '+64 00 000 0000',
-          helpText: 'Include the NZ country code +64 before the phone number',
-        },
-        {
-          countryCode: 'ME',
-          placeholder: '+382 00 000 000',
-          helpText: 'Uključite ME pozivni broj države +382 prije telefonskog broja',
-        },
-      ];
-
-      const selectedPlaceholder = mockPlaceholders.find(function(item) {
-        return item && item.countryCode === countryCode;
-      });
-      
-      return selectedPlaceholder ? selectedPlaceholder.placeholder : mockPlaceholders[0].placeholder;
-    }
-
-    function updatePlaceholder(countryCode, fieldName) {
-      if (!countryCode || !fieldName) {
-        return;
-      }
-      
-      const phoneInput = document.querySelector('#mce-' + fieldName);
-      if (!phoneInput) {
-        return;
-      }
-      
-      const placeholder = getDefaultPlaceholder(countryCode);
-      if (placeholder) {
-        phoneInput.placeholder = placeholder;
-      }
-    }
-
-    function updateCountryCodeInstruction(countryCode, fieldName) {
-      updatePlaceholder(countryCode, fieldName);
-      
-    }
-
-    function getDefaultHelpText(countryCode) {
-      var mockPlaceholders = [
-        {
-          countryCode: 'US',
-          placeholder: '+1 000 000 0000',
-          helpText: 'Include the US country code +1 before the phone number',
-        },
-        {
-          countryCode: 'GB',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the GB country code +44 before the phone number',
-        },
-        {
-          countryCode: 'CA',
-          placeholder: '+1 000 000 0000',
-          helpText: 'Include the CA country code +1 before the phone number',
-        },
-        {
-          countryCode: 'AU',
-          placeholder: '+61 000 000 000',
-          helpText: 'Include the AU country code +61 before the phone number',
-        },
-        {
-          countryCode: 'DE',
-          placeholder: '+49 000 0000000',
-          helpText: 'Fügen Sie vor der Telefonnummer die DE-Ländervorwahl +49 ein',
-        },
-        {
-          countryCode: 'FR',
-          placeholder: '+33 0 00 00 00 00',
-          helpText: 'Incluez le code pays FR +33 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'ES',
-          placeholder: '+34 000 000 000',
-          helpText: 'Incluya el código de país ES +34 antes del número de teléfono',
-        },
-        {
-          countryCode: 'NL',
-          placeholder: '+31 0 00000000',
-          helpText: 'Voeg de NL-landcode +31 toe vóór het telefoonnummer',
-        },
-        {
-          countryCode: 'BE',
-          placeholder: '+32 000 00 00 00',
-          helpText: 'Incluez le code pays BE +32 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'CH',
-          placeholder: '+41 00 000 00 00',
-          helpText: 'Fügen Sie vor der Telefonnummer die CH-Ländervorwahl +41 ein',
-        },
-        {
-          countryCode: 'AT',
-          placeholder: '+43 000 000 0000',
-          helpText: 'Fügen Sie vor der Telefonnummer die AT-Ländervorwahl +43 ein',
-        },
-        {
-          countryCode: 'IE',
-          placeholder: '+353 00 000 0000',
-          helpText: 'Include the IE country code +353 before the phone number',
-        },
-        {
-          countryCode: 'IT',
-          placeholder: '+39 000 000 0000',
-          helpText: 'Includere il prefisso internazionale IT +39 prima del numero di telefono',
-        },
-        {
-          countryCode: 'NO',
-          placeholder: '+47 000 00 000',
-          helpText: 'Inkluder NO landskode +47 før telefonnummeret',
-        },
-        {
-          countryCode: 'SE',
-          placeholder: '+46 00 000 00 00',
-          helpText: 'Inkludera SE landskod +46 före telefonnumret',
-        },
-        {
-          countryCode: 'DK',
-          placeholder: '+45 00 00 00 00',
-          helpText: 'Inkluder DK landekode +45 før telefonnummeret',
-        },
-        {
-          countryCode: 'FI',
-          placeholder: '+358 00 000 0000',
-          helpText: 'Sisällytä FI-maakoodi +358 ennen puhelinnumeroa',
-        },
-        {
-          countryCode: 'EE',
-          placeholder: '+372 0000 0000',
-          helpText: 'Lisage EE riigikood +372 telefoninumbri ette',
-        },
-        {
-          countryCode: 'PL',
-          placeholder: '+48 000 000 000',
-          helpText: 'Podaj numer kierunkowy PL +48 przed numerem telefonu',
-        },
-        {
-          countryCode: 'SK',
-          placeholder: '+421 000 000 000',
-          helpText: 'Pred telefónne číslo uveďte kód krajiny SK +421',
-        },
-        {
-          countryCode: 'LV',
-          placeholder: '+371 0000 0000',
-          helpText: 'Iekļaujiet LV valsts kodu +371 pirms tālruņa numura',
-        },
-        {
-          countryCode: 'LT',
-          placeholder: '+370 0000 0000',
-          helpText: 'Įtraukite LT šalies kodą +370 prieš telefono numerį',
-        },
-        {
-          countryCode: 'GR',
-          placeholder: '+30 000 000 0000',
-          helpText: 'Συμπεριλάβετε τον κωδικό χώρας GR +30 πριν από τον αριθμό τηλεφώνου',
-        },
-        {
-          countryCode: 'PT',
-          placeholder: '+351 000 000 000',
-          helpText: 'Inclua o código de país PT +351 antes do número de telefone',
-        },
-        {
-          countryCode: 'HR',
-          placeholder: '+385 00 000 0000',
-          helpText: 'Uključite HR pozivni broj države +385 prije telefonskog broja',
-        },
-        {
-          countryCode: 'SI',
-          placeholder: '+386 00 000 000',
-          helpText: 'Vključite SI kodo države +386 pred telefonsko številko',
-        },
-        {
-          countryCode: 'IS',
-          placeholder: '+354 000 0000',
-          helpText: 'Láttu IS landsnúmer +354 fylgja á undan símanúmerinu',
-        },
-        {
-          countryCode: 'LU',
-          placeholder: '+352 000 000 000',
-          helpText: 'Incluez le code pays LU +352 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'MC',
-          placeholder: '+377 00 00 00 00',
-          helpText: 'Incluez le code pays MC +377 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'AD',
-          placeholder: '+376 000 000',
-          helpText: 'Incloeu el codi de país AD +376 abans del número de telèfon',
-        },
-        {
-          countryCode: 'JE',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the JE country code +44 before the phone number',
-        },
-        {
-          countryCode: 'IM',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the IM country code +44 before the phone number',
-        },
-        {
-          countryCode: 'GG',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the GG country code +44 before the phone number',
-        },
-        {
-          countryCode: 'AL',
-          placeholder: '+355 00 000 0000',
-          helpText: 'Përfshini kodin e vendit AL +355 para numrit të telefonit',
-        },
-        {
-          countryCode: 'SM',
-          placeholder: '+378 0000 000000',
-          helpText: 'Includere il prefisso internazionale SM +378 prima del numero di telefono',
-        },
-        {
-          countryCode: 'FO',
-          placeholder: '+298 000000',
-          helpText: 'Inkluder FO landekode +298 før telefonnummeret',
-        },
-        {
-          countryCode: 'MT',
-          placeholder: '+356 0000 0000',
-          helpText: 'Include the MT country code +356 before the phone number',
-        },
-        {
-          countryCode: 'LI',
-          placeholder: '+423 000 0000',
-          helpText: 'Fügen Sie vor der Telefonnummer die LI-Ländervorwahl +423 ein',
-        },
-        {
-          countryCode: 'GI',
-          placeholder: '+350 000 00000',
-          helpText: 'Include the GI country code +350 before the phone number',
-        },
-        {
-          countryCode: 'MD',
-          placeholder: '+373 00 000 000',
-          helpText: 'Includeți codul de țară MD +373 înaintea numărului de telefon',
-        },
-        {
-          countryCode: 'HU',
-          placeholder: '+36 00 000 0000',
-          helpText: 'A telefonszám előtt adja meg a HU országkódot +36',
-        },
-        {
-          countryCode: 'NZ',
-          placeholder: '+64 00 000 0000',
-          helpText: 'Include the NZ country code +64 before the phone number',
-        },
-        {
-          countryCode: 'ME',
-          placeholder: '+382 00 000 000',
-          helpText: 'Uključite ME pozivni broj države +382 prije telefonskog broja',
-        },
-      ];
-      
-      if (!countryCode || typeof countryCode !== 'string') {
-        return mockPlaceholders[0].helpText;
-      }
-      
-      const selectedHelpText = mockPlaceholders.find(function(item) {
-          return item && item.countryCode === countryCode;
-        });
-        
-        return selectedHelpText ? selectedHelpText.helpText : mockPlaceholders[0].helpText;
-    }
-
-    function setDefaultHelpText(countryCode) {
-      const helpTextSpan = document.querySelector('#help-text');
-      if (!helpTextSpan) {
-        return;
-      }
-
-        
-    }
-
-    function updateHelpTextCountryCode(countryCode, fieldName) {
-      if (!countryCode || !fieldName) {
-        return;
-      }
-      
-      setDefaultHelpText(countryCode);
-    }
-
-    function initializeSmsPhoneDropdown(fieldName) {
-      if (!fieldName || typeof fieldName !== 'string') {
-        return;
-      }
-      
-      const dropdown = document.querySelector('#country-select-' + fieldName);
-      const displayFlag = document.querySelector('#flag-display-' + fieldName);
-      
-      if (!dropdown || !displayFlag) {
-        return;
-      }
-
-      const smsPhoneData = window.MC?.smsPhoneData;
-      if (smsPhoneData && smsPhoneData.programs && Array.isArray(smsPhoneData.programs)) {
-        dropdown.innerHTML = generateDropdownOptions(smsPhoneData.programs);
-      }
-
-      const defaultProgram = getDefaultCountryProgram(smsPhoneData?.defaultCountryCode, smsPhoneData?.programs);
-      if (defaultProgram && defaultProgram.countryCode) {
-        dropdown.value = defaultProgram.countryCode;
-        
-        const flagSpan = displayFlag?.querySelector('#flag-emoji-' + fieldName);
-        if (flagSpan) {
-          flagSpan.textContent = getCountryUnicodeFlag(defaultProgram.countryCode);
-          flagSpan.setAttribute('aria-label', sanitizeHtml(defaultProgram.countryCode) + ' flag');
-        }
-        
-        updateSmsLegalText(defaultProgram.countryCode, fieldName);
-        updatePlaceholder(defaultProgram.countryCode, fieldName);
-        updateCountryCodeInstruction(defaultProgram.countryCode, fieldName);
-      }
-
-     
-      var smsNotRequiredRemoveCountryCodeEnabled = true;
-      var smsField = Object.values({"EMAIL":{"name":"EMAIL","label":"Email Address","helper_text":"","merge_id":0,"type":"email","required":true,"audience_field_name":"Email Address","field_type":"merge","enabled":true,"order":0},"FNAME":{"name":"FNAME","label":"First Name","helper_text":"","type":"text","required":false,"audience_field_name":"First Name","enabled":true,"order":1,"field_type":"merge","merge_id":1},"LNAME":{"name":"LNAME","label":"Last Name","helper_text":"","type":"text","required":false,"audience_field_name":"Last Name","enabled":false,"order":null,"field_type":"merge","merge_id":2},"ADDRESS":{"name":"ADDRESS","label":"Address","helper_text":"","type":"address","required":false,"audience_field_name":"Address","enabled":false,"order":null,"field_type":"merge","merge_id":3,"countries":{"2":"Albania","3":"Algeria","4":"Andorra","5":"Angola","6":"Argentina","7":"Armenia","8":"Australia","9":"Austria","10":"Azerbaijan","11":"Bahamas","12":"Bahrain","13":"Bangladesh","14":"Barbados","15":"Belarus","16":"Belgium","17":"Belize","18":"Benin","19":"Bermuda","20":"Bhutan","21":"Bolivia","22":"Bosnia and Herzegovina","23":"Botswana","24":"Brazil","25":"Bulgaria","26":"Burkina Faso","27":"Burundi","28":"Cambodia","29":"Cameroon","30":"Canada","31":"Cape Verde","32":"Cayman Islands","33":"Central African Republic","34":"Chad","35":"Chile","36":"China","37":"Colombia","38":"Congo","40":"Croatia","41":"Cyprus","42":"Czech Republic","43":"Denmark","44":"Djibouti","45":"Ecuador","46":"Egypt","47":"El Salvador","48":"Equatorial Guinea","49":"Eritrea","50":"Estonia","51":"Ethiopia","52":"Fiji","53":"Finland","54":"France","56":"Gabon","57":"Gambia","58":"Georgia","59":"Germany","60":"Ghana","61":"Greece","62":"Guam","63":"Guinea","64":"Guinea-Bissau","65":"Guyana","66":"Honduras","67":"Hong Kong","68":"Hungary","69":"Iceland","70":"India","71":"Indonesia","74":"Ireland","75":"Israel","76":"Italy","78":"Japan","79":"Jordan","80":"Kazakhstan","81":"Kenya","82":"Kuwait","83":"Kyrgyzstan","84":"Lao People's Democratic Republic","85":"Latvia","86":"Lebanon","87":"Lesotho","88":"Liberia","90":"Liechtenstein","91":"Lithuania","92":"Luxembourg","93":"Macedonia","94":"Madagascar","95":"Malawi","96":"Malaysia","97":"Maldives","98":"Mali","99":"Malta","100":"Mauritania","101":"Mexico","102":"Moldova","103":"Monaco","104":"Mongolia","105":"Morocco","106":"Mozambique","107":"Namibia","108":"Nepal","109":"Netherlands","110":"Netherlands Antilles","111":"New Zealand","112":"Nicaragua","113":"Niger","114":"Nigeria","116":"Norway","117":"Oman","118":"Pakistan","119":"Panama","120":"Paraguay","121":"Peru","122":"Philippines","123":"Poland","124":"Portugal","126":"Qatar","127":"Reunion","128":"Romania","129":"Russia","130":"Rwanda","132":"Samoa (Independent)","133":"Saudi Arabia","134":"Senegal","135":"Seychelles","136":"Sierra Leone","137":"Singapore","138":"Slovakia","139":"Slovenia","140":"Somalia","141":"South Africa","142":"South Korea","143":"Spain","144":"Sri Lanka","146":"Suriname","147":"Swaziland","148":"Sweden","149":"Switzerland","152":"Taiwan","153":"Tanzania","154":"Thailand","155":"Togo","156":"Tunisia","157":"Turkiye","158":"Turkmenistan","159":"Uganda","161":"Ukraine","162":"United Arab Emirates","163":"Uruguay","164":"USA","165":"Uzbekistan","166":"Vatican City State (Holy See)","167":"Venezuela","168":"Vietnam","169":"Virgin Islands (British)","170":"Yemen","173":"Zambia","174":"Zimbabwe","175":"Antigua And Barbuda","176":"Anguilla","178":"American Samoa","179":"Aruba","180":"Brunei Darussalam","181":"Bouvet Island","183":"Cook Islands","185":"Christmas Island","187":"Dominican Republic","188":"Western Sahara","189":"Falkland Islands","191":"Faroe Islands","192":"Grenada","193":"French Guiana","194":"Gibraltar","195":"Greenland","196":"Guadeloupe","198":"Guatemala","200":"Haiti","202":"Jamaica","203":"Kiribati","204":"Comoros","205":"Saint Kitts and Nevis","206":"Saint Lucia","207":"Marshall Islands","208":"Macau","210":"Martinique","212":"Mauritius","213":"New Caledonia","214":"Norfolk Island","215":"Nauru","217":"Niue","219":"Papua New Guinea","221":"Pitcairn","222":"Palau","223":"Solomon Islands","225":"Svalbard and Jan Mayen Islands","227":"San Marino","232":"Tonga","233":"Timor-Leste","234":"Trinidad and Tobago","235":"Tuvalu","237":"Saint Vincent and the Grenadines","238":"Virgin Islands (U.S.)","239":"Vanuatu","241":"Mayotte","242":"Myanmar","255":"Sao Tome and Principe","257":"South Georgia and the South Sandwich Islands","260":"Tajikistan","262":"United Kingdom","268":"Costa Rica","270":"Guernsey","272":"North Korea","274":"Afghanistan","275":"Cote D'Ivoire","276":"Cuba","277":"French Polynesia","278":"Iran","279":"Iraq","281":"Libya","282":"Palestine","285":"Syria","286":"Aaland Islands","287":"Turks & Caicos Islands","288":"Jersey  (Channel Islands)","289":"Dominica","290":"Montenegro","293":"Sudan","294":"Montserrat","298":"Curacao","302":"Sint Maarten","311":"South Sudan","315":"Republic of Kosovo","318":"Congo, Democratic Republic of the","323":"Isle of Man","324":"Saint Martin","325":"Bonaire, Saint Eustatius and Saba","326":"Serbia","327":"Saint Barthelemy"},"defaultcountry":164},"PHONE":{"name":"PHONE","label":"Phone Number","helper_text":"","type":"phone","required":false,"audience_field_name":"Phone Number","phoneformat":"","enabled":false,"order":null,"field_type":"merge","merge_id":4},"BIRTHDAY":{"name":"BIRTHDAY","label":"Birthday","helper_text":"","type":"birthday","required":false,"audience_field_name":"Birthday","dateformat":"MM/DD","enabled":false,"order":null,"field_type":"merge","merge_id":5},"COMPANY":{"name":"COMPANY","label":"Company","helper_text":"","type":"text","required":false,"audience_field_name":"Company","enabled":false,"order":null,"field_type":"merge","merge_id":6}}).find(function(f) { return f.name === fieldName && f.type === 'smsphone'; });
-      var isRequired = smsField ? smsField.required : false;
-      var shouldAppendCountryCode = smsNotRequiredRemoveCountryCodeEnabled ? isRequired : true;
-      
-      var phoneInput = document.querySelector('#mce-' + fieldName);
-      if (phoneInput && defaultProgram.countryCallingCode && shouldAppendCountryCode) {
-        phoneInput.value = defaultProgram.countryCallingCode;
-      }
-      
-
-
-      displayFlag?.addEventListener('click', function(e) {
-        dropdown.focus();
-      });
-
-
-      dropdown?.addEventListener('change', function() {
-        const selectedCountry = this.value;
-        
-        if (!selectedCountry || typeof selectedCountry !== 'string') {
-          return;
-        }
-        
-        const flagSpan = displayFlag?.querySelector('#flag-emoji-' + fieldName);
-        if (flagSpan) {
-          flagSpan.textContent = getCountryUnicodeFlag(selectedCountry);
-          flagSpan.setAttribute('aria-label', sanitizeHtml(selectedCountry) + ' flag');
-        }
-
-         
-        const selectedProgram = window.MC?.smsPhoneData?.programs.find(function(program) {
-          return program && program.countryCode === selectedCountry;
-        });
-
-        var smsNotRequiredRemoveCountryCodeEnabled = true;
-        var smsField = Object.values({"EMAIL":{"name":"EMAIL","label":"Email Address","helper_text":"","merge_id":0,"type":"email","required":true,"audience_field_name":"Email Address","field_type":"merge","enabled":true,"order":0},"FNAME":{"name":"FNAME","label":"First Name","helper_text":"","type":"text","required":false,"audience_field_name":"First Name","enabled":true,"order":1,"field_type":"merge","merge_id":1},"LNAME":{"name":"LNAME","label":"Last Name","helper_text":"","type":"text","required":false,"audience_field_name":"Last Name","enabled":false,"order":null,"field_type":"merge","merge_id":2},"ADDRESS":{"name":"ADDRESS","label":"Address","helper_text":"","type":"address","required":false,"audience_field_name":"Address","enabled":false,"order":null,"field_type":"merge","merge_id":3,"countries":{"2":"Albania","3":"Algeria","4":"Andorra","5":"Angola","6":"Argentina","7":"Armenia","8":"Australia","9":"Austria","10":"Azerbaijan","11":"Bahamas","12":"Bahrain","13":"Bangladesh","14":"Barbados","15":"Belarus","16":"Belgium","17":"Belize","18":"Benin","19":"Bermuda","20":"Bhutan","21":"Bolivia","22":"Bosnia and Herzegovina","23":"Botswana","24":"Brazil","25":"Bulgaria","26":"Burkina Faso","27":"Burundi","28":"Cambodia","29":"Cameroon","30":"Canada","31":"Cape Verde","32":"Cayman Islands","33":"Central African Republic","34":"Chad","35":"Chile","36":"China","37":"Colombia","38":"Congo","40":"Croatia","41":"Cyprus","42":"Czech Republic","43":"Denmark","44":"Djibouti","45":"Ecuador","46":"Egypt","47":"El Salvador","48":"Equatorial Guinea","49":"Eritrea","50":"Estonia","51":"Ethiopia","52":"Fiji","53":"Finland","54":"France","56":"Gabon","57":"Gambia","58":"Georgia","59":"Germany","60":"Ghana","61":"Greece","62":"Guam","63":"Guinea","64":"Guinea-Bissau","65":"Guyana","66":"Honduras","67":"Hong Kong","68":"Hungary","69":"Iceland","70":"India","71":"Indonesia","74":"Ireland","75":"Israel","76":"Italy","78":"Japan","79":"Jordan","80":"Kazakhstan","81":"Kenya","82":"Kuwait","83":"Kyrgyzstan","84":"Lao People's Democratic Republic","85":"Latvia","86":"Lebanon","87":"Lesotho","88":"Liberia","90":"Liechtenstein","91":"Lithuania","92":"Luxembourg","93":"Macedonia","94":"Madagascar","95":"Malawi","96":"Malaysia","97":"Maldives","98":"Mali","99":"Malta","100":"Mauritania","101":"Mexico","102":"Moldova","103":"Monaco","104":"Mongolia","105":"Morocco","106":"Mozambique","107":"Namibia","108":"Nepal","109":"Netherlands","110":"Netherlands Antilles","111":"New Zealand","112":"Nicaragua","113":"Niger","114":"Nigeria","116":"Norway","117":"Oman","118":"Pakistan","119":"Panama","120":"Paraguay","121":"Peru","122":"Philippines","123":"Poland","124":"Portugal","126":"Qatar","127":"Reunion","128":"Romania","129":"Russia","130":"Rwanda","132":"Samoa (Independent)","133":"Saudi Arabia","134":"Senegal","135":"Seychelles","136":"Sierra Leone","137":"Singapore","138":"Slovakia","139":"Slovenia","140":"Somalia","141":"South Africa","142":"South Korea","143":"Spain","144":"Sri Lanka","146":"Suriname","147":"Swaziland","148":"Sweden","149":"Switzerland","152":"Taiwan","153":"Tanzania","154":"Thailand","155":"Togo","156":"Tunisia","157":"Turkiye","158":"Turkmenistan","159":"Uganda","161":"Ukraine","162":"United Arab Emirates","163":"Uruguay","164":"USA","165":"Uzbekistan","166":"Vatican City State (Holy See)","167":"Venezuela","168":"Vietnam","169":"Virgin Islands (British)","170":"Yemen","173":"Zambia","174":"Zimbabwe","175":"Antigua And Barbuda","176":"Anguilla","178":"American Samoa","179":"Aruba","180":"Brunei Darussalam","181":"Bouvet Island","183":"Cook Islands","185":"Christmas Island","187":"Dominican Republic","188":"Western Sahara","189":"Falkland Islands","191":"Faroe Islands","192":"Grenada","193":"French Guiana","194":"Gibraltar","195":"Greenland","196":"Guadeloupe","198":"Guatemala","200":"Haiti","202":"Jamaica","203":"Kiribati","204":"Comoros","205":"Saint Kitts and Nevis","206":"Saint Lucia","207":"Marshall Islands","208":"Macau","210":"Martinique","212":"Mauritius","213":"New Caledonia","214":"Norfolk Island","215":"Nauru","217":"Niue","219":"Papua New Guinea","221":"Pitcairn","222":"Palau","223":"Solomon Islands","225":"Svalbard and Jan Mayen Islands","227":"San Marino","232":"Tonga","233":"Timor-Leste","234":"Trinidad and Tobago","235":"Tuvalu","237":"Saint Vincent and the Grenadines","238":"Virgin Islands (U.S.)","239":"Vanuatu","241":"Mayotte","242":"Myanmar","255":"Sao Tome and Principe","257":"South Georgia and the South Sandwich Islands","260":"Tajikistan","262":"United Kingdom","268":"Costa Rica","270":"Guernsey","272":"North Korea","274":"Afghanistan","275":"Cote D'Ivoire","276":"Cuba","277":"French Polynesia","278":"Iran","279":"Iraq","281":"Libya","282":"Palestine","285":"Syria","286":"Aaland Islands","287":"Turks & Caicos Islands","288":"Jersey  (Channel Islands)","289":"Dominica","290":"Montenegro","293":"Sudan","294":"Montserrat","298":"Curacao","302":"Sint Maarten","311":"South Sudan","315":"Republic of Kosovo","318":"Congo, Democratic Republic of the","323":"Isle of Man","324":"Saint Martin","325":"Bonaire, Saint Eustatius and Saba","326":"Serbia","327":"Saint Barthelemy"},"defaultcountry":164},"PHONE":{"name":"PHONE","label":"Phone Number","helper_text":"","type":"phone","required":false,"audience_field_name":"Phone Number","phoneformat":"","enabled":false,"order":null,"field_type":"merge","merge_id":4},"BIRTHDAY":{"name":"BIRTHDAY","label":"Birthday","helper_text":"","type":"birthday","required":false,"audience_field_name":"Birthday","dateformat":"MM/DD","enabled":false,"order":null,"field_type":"merge","merge_id":5},"COMPANY":{"name":"COMPANY","label":"Company","helper_text":"","type":"text","required":false,"audience_field_name":"Company","enabled":false,"order":null,"field_type":"merge","merge_id":6}}).find(function(f) { return f.name === fieldName && f.type === 'smsphone'; });
-        var isRequired = smsField ? smsField.required : false;
-        var shouldAppendCountryCode = smsNotRequiredRemoveCountryCodeEnabled ? isRequired : true;
-        
-        var phoneInput = document.querySelector('#mce-' + fieldName);
-        if (phoneInput && selectedProgram.countryCallingCode && shouldAppendCountryCode) {
-          phoneInput.value = selectedProgram.countryCallingCode;
-        }
-        
-        
-        updateSmsLegalText(selectedCountry, fieldName);
-        updatePlaceholder(selectedCountry, fieldName);
-        updateCountryCodeInstruction(selectedCountry, fieldName);
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const smsPhoneFields = document.querySelectorAll('[id^="country-select-"]');
-      
-      smsPhoneFields.forEach(function(dropdown) {
-        const fieldName = dropdown?.id.replace('country-select-', '');
-        initializeSmsPhoneDropdown(fieldName);
-      });
-    });
-    </script></div>
-     
-<div class="cta-buttons">
-        <a href="mailto:ayo.stratminds@gmail.com?subject=Psychological Safety Pulse - Consultation Request" class="btn">Book a Consultation</a>
+      <div class="cta-buttons">
+        <a href="mailto:anonspectt@gmail.com?subject=Psychological Safety Pulse - Consultation Request" class="btn">Book a Consultation</a>
         <button class="btn btn-ghost" onclick="restartTool()">Retake Assessment</button>
       </div>
     </div>
@@ -1483,6 +1062,20 @@ h1 em { font-style: italic; color: var(--accent-light); }
 </div>
 
 <script>
+function handleCapture(e) {
+  e.preventDefault();
+  var form = e.target;
+  var name = form.fname.value;
+  var email = form.email.value;
+  fetch('https://formspree.io/f/mpqnojpb', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({name: name, email: email, source: 'PSP Notify Me'})
+  }).catch(function(){});
+  form.style.display = 'none';
+  document.getElementById('capture-success').style.display = 'block';
+}
+
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 
 const DIMENSIONS = [
@@ -1902,6 +1495,7 @@ function restartTool() {
   document.getElementById('start-btn').disabled = true;
   showScreen('screen-landing');
 }
+
 </script>
 </body>
 </html>

@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayoola Clarke-Prescott | Business Psychologist &amp; Anonymisation Specialist</title>
+<meta name="description" content="Ayoola Clarke-Prescott bridges behavioural science and information governance, helping Trinidad &amp; Tobago organisations close the gap between data policy and human culture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14110d;
+    --navy: #16233d;
+    --navy-deep: #0d1626;
+    --navy-soft: #233a5e;
+    --gold: #c19a3e;
+    --gold-light: #d9b461;
+    --gold-pale: #efe2bd;
+    --cream: #faf6ee;
+    --cream-deep: #f1e9da;
+    --paper: #fffdf8;
+    --rust: #8a4631;
+    --mid: #6f6353;
+    --mist: rgba(250,246,238,0.62);
+    --border: #ddd0b8;
+    --shadow-sm: rgba(20,17,13,0.08);
+    --shadow-md: rgba(20,17,13,0.14);
+    --shadow-lg: rgba(13,22,38,0.28);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--gold-pale); color: var(--ink); }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--gold);
+    opacity: 0.7;
+  }
+  .eyebrow.center { justify-content: center; }
+  .eyebrow.center::after {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--gold);
+    opacity: 0.7;
+  }
+
+  h1, h2, h3, .display { font-family: 'Cormorant Garamond', serif; }
+
+  /* ───────── NAV ───────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.3rem 2.4rem;
+    transition: padding 0.4s ease, background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    border-bottom: 1px solid transparent;
+  }
+  nav.scrolled {
+    background: rgba(13,22,38,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.85rem 2.4rem;
+    box-shadow: 0 8px 40px rgba(13,22,38,0.25);
+    border-bottom-color: rgba(193,154,62,0.25);
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--cream);
+    transition: color 0.4s ease;
+  }
+  .nav-brand .dot { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.1rem;
+  }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(250,246,238,0.72);
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.25s ease;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -6px;
+    width: 0; height: 1.5px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    font-size: 0.74rem !important;
+    font-weight: 600 !important;
+    color: var(--gold) !important;
+    border: 1px solid var(--gold);
+    padding: 0.55rem 1.2rem;
+    border-radius: 2px;
+    transition: background 0.3s ease, color 0.3s ease !important;
+  }
+  .nav-cta::after { display: none; }
+  .nav-cta:hover { background: var(--gold); color: var(--navy-deep) !important; }
+
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 6px; }
+  .nav-toggle span { width: 24px; height: 2px; background: var(--cream); transition: 0.3s; }
+
+  /* ───────── HERO ───────── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse 80% 60% at 75% 30%, rgba(35,58,94,0.55) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 15% 80%, rgba(193,154,62,0.12) 0%, transparent 55%),
+      linear-gradient(155deg, var(--navy-deep) 0%, var(--navy) 55%, #1b2c49 100%);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 7rem 0 4rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-eyebrow { margin-bottom: 1.8rem; }
+  .hero-eyebrow .eyebrow { color: var(--gold-light); }
+  .hero-eyebrow .eyebrow::before { background: var(--gold-light); }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 5.5vw, 4.6rem);
+    font-weight: 500;
+    line-height: 1.06;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    margin-bottom: 1.6rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold-light);
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .hero-lede {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: rgba(250,246,238,0.78);
+    max-width: 30rem;
+    margin-bottom: 2.4rem;
+    font-weight: 300;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.95rem 1.9rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+  }
+  .btn .arrow { transition: transform 0.25s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--navy-deep);
+    box-shadow: 0 10px 30px rgba(193,154,62,0.32);
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(193,154,62,0.45); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    border-color: rgba(250,246,238,0.35);
+  }
+  .btn-ghost:hover { border-color: var(--gold-light); color: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-ink {
+    background: var(--navy);
+    color: var(--cream);
+    box-shadow: 0 8px 24px rgba(13,22,38,0.2);
+  }
+  .btn-ink:hover { background: var(--navy-deep); transform: translateY(-2px); box-shadow: 0 14px 34px rgba(13,22,38,0.3); }
+
+  .btn-outline-ink {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--border);
+  }
+  .btn-outline-ink:hover { border-color: var(--gold); color: var(--rust); transform: translateY(-2px); }
+
+  /* convergence motif */
+  .convergence {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .convergence svg { width: 100%; height: 100%; overflow: visible; }
+
+  .conv-ring { fill: none; stroke-width: 1.1; opacity: 0; transform-origin: center; }
+  .conv-ring.r1 { stroke: var(--gold-light); animation: ringIn 1s 0.3s ease forwards, drift1 14s 1.3s ease-in-out infinite; }
+  .conv-ring.r2 { stroke: #6f93c4; animation: ringIn 1s 0.5s ease forwards, drift2 16s 1.5s ease-in-out infinite; }
+  .conv-ring.r3 { stroke: var(--cream); animation: ringIn 1s 0.7s ease forwards, drift3 18s 1.7s ease-in-out infinite; }
+
+  @keyframes ringIn { to { opacity: 0.55; } }
+  @keyframes drift1 { 0%,100%{ transform: translate(0,0);} 50%{ transform: translate(14px,-10px);} }
+  @keyframes drift2 { 0%,100%{ transform: translate(0,0);} 50%{ transform: translate(-12px,12px);} }
+  @keyframes drift3 { 0%,100%{ transform: translate(0,0);} 50%{ transform: translate(8px,14px);} }
+
+  .conv-core {
+    fill: var(--gold);
+    opacity: 0;
+    animation: coreIn 1.2s 1.1s ease forwards, pulse 4s 2.3s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes coreIn { to { opacity: 1; } }
+  @keyframes pulse { 0%,100%{ r: 7px; opacity:1;} 50%{ r: 9px; opacity:0.85;} }
+
+  .conv-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    fill: rgba(250,246,238,0.85);
+    opacity: 0;
+    animation: labelIn 0.8s ease forwards;
+  }
+  .conv-label.l1 { animation-delay: 1.5s; }
+  .conv-label.l2 { animation-delay: 1.7s; }
+  .conv-label.l3 { animation-delay: 1.9s; }
+  @keyframes labelIn { to { opacity: 1; } }
+
+  .conv-spark { fill: var(--gold-light); opacity: 0; animation: spark 5s ease-in-out infinite; }
+  @keyframes spark { 0%,100%{opacity:0;} 50%{opacity:0.9;} }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: rgba(250,246,238,0.5);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: fadeIn 1s 2s both;
+  }
+  .scroll-hint .mouse {
+    width: 20px; height: 32px;
+    border: 1.5px solid rgba(250,246,238,0.4);
+    border-radius: 12px;
+    position: relative;
+  }
+  .scroll-hint .mouse::after {
+    content: '';
+    position: absolute;
+    top: 6px; left: 50%;
+    transform: translateX(-50%);
+    width: 3px; height: 6px;
+    background: var(--gold-light);
+    border-radius: 2px;
+    animation: scrollDot 1.8s ease-in-out infinite;
+  }
+  @keyframes scrollDot { 0%{opacity:0; transform: translate(-50%,0);} 40%{opacity:1;} 80%{opacity:0; transform: translate(-50%,10px);} }
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  /* ───────── REVEAL ───────── */
+  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: 0.1s; }
+  .reveal.d2 { transition-delay: 0.2s; }
+  .reveal.d3 { transition-delay: 0.3s; }
+  .reveal.d4 { transition-delay: 0.4s; }
+
+  /* ───────── SECTION BASICS ───────── */
+  section { position: relative; }
+  .section-pad { padding: 7rem 0; }
+  .section-head { max-width: 42rem; margin-bottom: 3.5rem; }
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .section-head h2 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    font-weight: 500;
+    line-height: 1.12;
+    color: var(--navy);
+    margin: 1.2rem 0 1rem;
+    letter-spacing: -0.01em;
+  }
+  .section-head h2 em { font-style: italic; color: var(--rust); }
+  .section-head p { font-size: 1.02rem; color: var(--mid); line-height: 1.85; font-weight: 300; }
+
+  /* ───────── MARQUEE / CRED STRIP ───────── */
+  .credstrip {
+    background: var(--navy-deep);
+    padding: 1.5rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(193,154,62,0.2);
+    border-bottom: 1px solid rgba(193,154,62,0.2);
+  }
+  .marquee { display: flex; gap: 3.5rem; white-space: nowrap; animation: scrollX 32s linear infinite; width: max-content; }
+  .credstrip:hover .marquee { animation-play-state: paused; }
+  .marquee span {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: rgba(250,246,238,0.5);
+    display: inline-flex; align-items: center; gap: 3.5rem;
+  }
+  .marquee span::after { content: '✦'; color: var(--gold); font-style: normal; font-size: 0.7rem; }
+  @keyframes scrollX { to { transform: translateX(-50%); } }
+
+  /* ───────── BRIDGE / PILLARS ───────── */
+  #approach { background: var(--cream); }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    margin-top: 1rem;
+  }
+  .pillar {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 2.4rem 2rem;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease, border-color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .pillar::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, rgba(193,154,62,0.06), transparent 50%);
+    opacity: 0; transition: opacity 0.4s ease;
+  }
+  .pillar:hover { transform: translateY(-8px); box-shadow: 0 24px 50px var(--shadow-md); }
+  .pillar:hover::before { opacity: 1; }
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem; font-weight: 300;
+    color: var(--gold-pale);
+    line-height: 1; margin-bottom: 1rem;
+  }
+  .pillar-icon { width: 38px; height: 38px; margin-bottom: 1.1rem; color: var(--gold); }
+  .pillar h3 { font-size: 1.42rem; font-weight: 600; color: var(--navy); margin-bottom: 0.7rem; }
+  .pillar p { font-size: 0.9rem; color: var(--mid); line-height: 1.75; font-weight: 300; }
+
+  .bridge-note {
+    margin-top: 2.4rem;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+  .bridge-note strong { color: var(--rust); font-weight: 600; font-style: normal; }
+
+  /* ───────── ABOUT ───────── */
+  #about {
+    background:
+      radial-gradient(ellipse 60% 50% at 90% 10%, rgba(193,154,62,0.08), transparent 60%),
+      var(--cream-deep);
+  }
+  .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: center; }
+
+  .portrait-frame {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: linear-gradient(155deg, var(--navy), var(--navy-deep));
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px var(--shadow-lg);
+  }
+  .portrait-frame::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 1px solid rgba(193,154,62,0.3);
+    margin: 12px;
+    pointer-events: none;
+  }
+  .portrait-mono {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem; font-weight: 300;
+    color: rgba(193,154,62,0.22);
+    letter-spacing: -0.04em;
+  }
+  .portrait-tag {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1.6rem;
+    background: linear-gradient(0deg, rgba(13,22,38,0.92), transparent);
+  }
+  .portrait-tag .name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--cream); font-weight: 500; }
+  .portrait-tag .role { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-top: 0.2rem; }
+  .portrait-hint {
+    position: absolute; top: 1rem; right: 1rem;
+    font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(250,246,238,0.3);
+    border: 1px dashed rgba(250,246,238,0.25);
+    padding: 0.3rem 0.6rem; border-radius: 2px;
+  }
+
+  .about-body h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); font-weight: 500; color: var(--navy); line-height: 1.12; margin: 1rem 0 1.4rem; }
+  .about-body h2 em { font-style: italic; color: var(--rust); }
+  .about-body p { font-size: 0.98rem; color: var(--mid); line-height: 1.9; margin-bottom: 1.1rem; font-weight: 300; }
+  .about-body p strong { color: var(--navy); font-weight: 600; }
+
+  .cred-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;
+    margin: 1.8rem 0 2rem;
+  }
+  .cred-item {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.2rem;
+  }
+  .cred-item .big { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--navy); line-height: 1; }
+  .cred-item .small { font-size: 0.74rem; color: var(--mid); margin-top: 0.35rem; line-height: 1.4; }
+
+  /* ───────── TIMELINE ───────── */
+  #journey { background: var(--navy-deep); color: var(--cream); }
+  #journey .section-head h2 { color: var(--cream); }
+  #journey .section-head p { color: rgba(250,246,238,0.65); }
+  #journey .eyebrow { color: var(--gold-light); }
+  #journey .eyebrow::before, #journey .eyebrow.center::after { background: var(--gold-light); }
+
+  .timeline { position: relative; max-width: 50rem; margin: 0 auto; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+    width: 1.5px; background: linear-gradient(180deg, var(--gold), rgba(193,154,62,0.1));
+  }
+  .tl-item { position: relative; padding: 0 0 2.6rem 2.2rem; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -2rem; top: 4px;
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--navy-deep); border: 2px solid var(--gold);
+    transform: translateX(-4.7px);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .tl-item:hover::before { background: var(--gold); transform: translateX(-4.7px) scale(1.25); }
+  .tl-year { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-light); font-weight: 600; }
+  .tl-item h3 { font-size: 1.4rem; color: var(--cream); font-weight: 500; margin: 0.3rem 0 0.5rem; }
+  .tl-item p { font-size: 0.9rem; color: rgba(250,246,238,0.62); line-height: 1.7; font-weight: 300; }
+
+  /* ───────── SERVICES ───────── */
+  #services { background: var(--cream); }
+  .svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .svc-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    padding: 2.4rem;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+    position: relative; overflow: hidden;
+  }
+  .svc-card::after {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: linear-gradient(180deg, var(--gold), var(--rust));
+    transform: scaleY(0); transform-origin: top; transition: transform 0.4s ease;
+  }
+  .svc-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px var(--shadow-md); }
+  .svc-card:hover::after { transform: scaleY(1); }
+  .svc-tag {
+    font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.9rem; display: inline-block;
+  }
+  .svc-card h3 { font-size: 1.5rem; font-weight: 600; color: var(--navy); margin-bottom: 0.7rem; }
+  .svc-card p { font-size: 0.92rem; color: var(--mid); line-height: 1.8; font-weight: 300; }
+
+  /* ───────── TOOLS ───────── */
+  #tools {
+    background:
+      radial-gradient(ellipse 50% 40% at 10% 90%, rgba(193,154,62,0.07), transparent 60%),
+      var(--cream-deep);
+  }
+  .tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+  .tool-card {
+    background: linear-gradient(160deg, var(--paper), var(--cream));
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2.2rem;
+    display: flex; flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease, border-color 0.4s ease;
+    position: relative; overflow: hidden;
+  }
+  .tool-card:hover { transform: translateY(-6px); box-shadow: 0 26px 54px var(--shadow-md); border-color: var(--gold); }
+  .tool-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.2rem; }
+  .tool-icon {
+    width: 52px; height: 52px; border-radius: 3px;
+    background: linear-gradient(140deg, var(--navy), var(--navy-soft));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 20px rgba(13,22,38,0.22);
+  }
+  .tool-icon svg { width: 26px; height: 26px; color: var(--gold-light); }
+  .status {
+    font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.28rem 0.65rem; border-radius: 20px;
+  }
+  .status.live { background: #e3f1e3; color: #2d6a2d; }
+  .status.soon { background: var(--gold-pale); color: #7a5e1e; }
+  .tool-card h3 { font-size: 1.42rem; font-weight: 600; color: var(--navy); margin-bottom: 0.55rem; line-height: 1.2; }
+  .tool-card p { font-size: 0.88rem; color: var(--mid); line-height: 1.7; font-weight: 300; flex-grow: 1; margin-bottom: 1.5rem; }
+  .tool-link {
+    font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--rust); display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: gap 0.25s ease, color 0.25s ease;
+  }
+  .tool-link:hover { gap: 0.85rem; color: var(--gold); }
+  .tool-link.disabled { color: var(--mid); opacity: 0.6; pointer-events: none; }
+
+  .featured-tool {
+    grid-column: 1 / -1;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    background: linear-gradient(135deg, var(--navy), var(--navy-deep));
+    border: none; padding: 0;
+    box-shadow: 0 24px 60px var(--shadow-lg);
+  }
+  .featured-tool:hover { transform: translateY(-6px); }
+  .featured-copy { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+  .featured-copy .svc-tag { color: var(--gold-light); }
+  .featured-copy h3 { color: var(--cream); font-size: 2rem; }
+  .featured-copy p { color: rgba(250,246,238,0.72); margin-bottom: 1.8rem; }
+  .featured-visual {
+    background:
+      radial-gradient(circle at 60% 40%, rgba(193,154,62,0.18), transparent 60%),
+      linear-gradient(160deg, #1b2c49, var(--navy-deep));
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; min-height: 240px;
+  }
+
+  /* ───────── WHITEPAPER BANNER ───────── */
+  #authority { background: var(--navy-deep); color: var(--cream); overflow: hidden; }
+  .wp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .wp-copy .eyebrow { color: var(--gold-light); }
+  .wp-copy .eyebrow::before { background: var(--gold-light); }
+  .wp-copy h2 { font-size: clamp(2rem,4vw,3rem); font-weight: 500; color: var(--cream); line-height: 1.12; margin: 1.2rem 0 1.2rem; }
+  .wp-copy h2 em { font-style: italic; color: var(--gold-light); }
+  .wp-copy p { font-size: 1rem; color: rgba(250,246,238,0.72); line-height: 1.85; margin-bottom: 2rem; font-weight: 300; }
+
+  .wp-cover {
+    position: relative; aspect-ratio: 3/4; max-width: 360px; margin: 0 auto;
+    background: linear-gradient(160deg, #fff 0%, var(--cream) 100%);
+    border-radius: 3px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+    overflow: hidden;
+    transform: rotate(-3deg);
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+  }
+  .wp-cover:hover { transform: rotate(0deg) scale(1.02); }
+  .wp-cover::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: linear-gradient(180deg, var(--gold), var(--rust)); }
+  .wp-cover-inner { padding: 2.5rem 2rem 2rem 2.5rem; height: 100%; display: flex; flex-direction: column; }
+  .wp-cover .kicker { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 1.5rem; }
+  .wp-cover .ttl { font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; font-weight: 600; color: var(--navy); line-height: 1.12; }
+  .wp-cover .sub { font-size: 0.78rem; color: var(--mid); margin-top: 0.9rem; line-height: 1.5; font-weight: 300; }
+  .wp-cover .auth { margin-top: auto; font-size: 0.72rem; color: var(--navy); font-weight: 600; letter-spacing: 0.04em; }
+  .wp-cover .auth span { display: block; font-weight: 400; color: var(--mid); font-size: 0.66rem; margin-top: 0.2rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* ───────── CONTACT ───────── */
+  #contact { background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+  .contact-intro h2 { font-size: clamp(2rem,4vw,3rem); font-weight: 500; color: var(--navy); line-height: 1.12; margin: 1rem 0 1.2rem; }
+  .contact-intro h2 em { font-style: italic; color: var(--rust); }
+  .contact-intro p { font-size: 1rem; color: var(--mid); line-height: 1.85; margin-bottom: 2rem; font-weight: 300; }
+  .contact-detail { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1rem; font-size: 0.92rem; color: var(--navy); }
+  .contact-detail svg { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+  .contact-detail a { transition: color 0.2s; }
+  .contact-detail a:hover { color: var(--rust); }
+
+  .form-card { background: var(--paper); border: 1px solid var(--border); border-top: 3px solid var(--gold); padding: 2.5rem; box-shadow: 0 14px 40px var(--shadow-sm); }
+  .form-field { margin-bottom: 1.3rem; }
+  .form-field label { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.5rem; }
+  .form-field input, .form-field textarea, .form-field select {
+    width: 100%; padding: 0.8rem 1rem;
+    border: 1px solid var(--border); background: var(--cream);
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--ink);
+    border-radius: 2px; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+    border-color: var(--gold); background: #fff; box-shadow: 0 0 0 3px rgba(193,154,62,0.12);
+  }
+  .form-field textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+  .form-card .btn { width: 100%; justify-content: center; }
+  .form-status { margin-top: 1rem; font-size: 0.85rem; text-align: center; min-height: 1.2rem; }
+  .form-status.ok { color: #2d6a2d; }
+  .form-status.err { color: var(--rust); }
+
+  /* ───────── FOOTER ───────── */
+  footer { background: var(--navy-deep); color: rgba(250,246,238,0.6); padding: 4rem 0 2rem; }
+  .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .foot-brand .nav-brand { font-size: 1.6rem; margin-bottom: 1rem; display: inline-block; }
+  .foot-brand p { font-size: 0.88rem; line-height: 1.8; max-width: 22rem; font-weight: 300; }
+  .foot-col h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.2rem; font-weight: 600; }
+  .foot-col a { display: block; font-size: 0.88rem; margin-bottom: 0.7rem; color: rgba(250,246,238,0.6); transition: color 0.2s, padding-left 0.2s; }
+  .foot-col a:hover { color: var(--gold-light); padding-left: 4px; }
+  .foot-bottom { border-top: 1px solid rgba(250,246,238,0.12); padding-top: 1.8rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.78rem; }
+  .foot-bottom a:hover { color: var(--gold-light); }
+
+  /* ───────── RESPONSIVE ───────── */
+  @media (max-width: 920px) {
+    .hero-grid, .about-grid, .wp-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .convergence { max-width: 340px; }
+    .hero { padding-top: 8rem; }
+    .pillars, .svc-grid, .tool-grid { grid-template-columns: 1fr; }
+    .featured-tool { grid-template-columns: 1fr; }
+    .featured-visual { min-height: 180px; }
+    .foot-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--navy-deep); padding: 1.5rem 2.4rem; gap: 1.2rem;
+      border-bottom: 1px solid rgba(193,154,62,0.25);
+    }
+    .nav-toggle { display: flex; }
+    .about-body { order: 2; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 1.4rem; }
+    .section-pad { padding: 4.5rem 0; }
+    nav { padding: 1rem 1.4rem; }
+    .cred-grid { grid-template-columns: 1fr; }
+    .hero h1 em { white-space: normal; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ───────── NAV ───────── -->
+<nav id="nav">
+  <a href="#top" class="nav-brand">Ayoola Clarke-Prescott<span class="dot">.</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks">
+    <a href="#approach">Approach</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#tools">Tools</a>
+    <a href="#authority">Whitepaper</a>
+    <a href="#contact" class="nav-cta">Work With Me</a>
+  </div>
+</nav>
+
+<!-- ───────── HERO ───────── -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow"><span class="eyebrow">Business Psychology &middot; Information Governance</span></div>
+        <h1>Where data policy meets <em>human behaviour.</em></h1>
+        <p class="hero-lede">I am Ayoola Clarke-Prescott, a Business Psychologist and Anonymisation Specialist. I work at an intersection most practitioners never reach, the space where behavioural science, information governance, and legal literacy converge. And I address it from both sides simultaneously.</p>
+        <div class="hero-actions">
+          <a href="#authority" class="btn btn-gold">Read the Whitepaper <span class="arrow">&rarr;</span></a>
+          <a href="#about" class="btn btn-ghost">Meet Ayoola</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="convergence">
+          <svg viewBox="0 0 300 300" aria-label="Three disciplines converging into one">
+            <circle class="conv-ring r1" cx="112" cy="118" r="74"/>
+            <circle class="conv-ring r2" cx="188" cy="118" r="74"/>
+            <circle class="conv-ring r3" cx="150" cy="180" r="74"/>
+            <circle class="conv-core" cx="150" cy="140" r="7"/>
+            <circle class="conv-spark" cx="84" cy="84" r="2" style="animation-delay:0.5s"/>
+            <circle class="conv-spark" cx="218" cy="92" r="2.5" style="animation-delay:1.8s"/>
+            <circle class="conv-spark" cx="150" cy="234" r="2" style="animation-delay:3s"/>
+            <text class="conv-label l1" x="96" y="44" text-anchor="middle">Psychology</text>
+            <text class="conv-label l2" x="204" y="44" text-anchor="middle">Governance</text>
+            <text class="conv-label l3" x="150" y="268" text-anchor="middle">Legal</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span class="mouse"></span>Scroll</div>
+</header>
+
+<!-- ───────── CRED STRIP ───────── -->
+<div class="credstrip">
+  <div class="marquee">
+    <span>MSc Business Psychology &mdash; 4.0 GPA</span>
+    <span>BSc Information Science &mdash; Magna Cum Laude</span>
+    <span>Legal Studies Minor</span>
+    <span>Anonymisation Specialist</span>
+    <span>Behavioural Science</span>
+    <span>Information Governance</span>
+    <span>MSc Business Psychology &mdash; 4.0 GPA</span>
+    <span>BSc Information Science &mdash; Magna Cum Laude</span>
+    <span>Legal Studies Minor</span>
+    <span>Anonymisation Specialist</span>
+    <span>Behavioural Science</span>
+    <span>Information Governance</span>
+  </div>
+</div>
+
+<!-- ───────── APPROACH / PILLARS ───────── -->
+<section id="approach" class="section-pad">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">The Bridge</span>
+      <h2>One practitioner. <em>Three disciplines.</em> One rare vantage point.</h2>
+      <p>Most organisations treat data risk as a technology problem and people problem as separate concerns. I do not. My practice is built on the conviction that the two are inseparable, and that the professionals who can work both sides at once are the ones who actually close the gap.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal d1">
+        <div class="pillar-num">01</div>
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2a5 5 0 0 0-5 5c0 1.5.5 2.5 1 3.5.5 1 .5 2 .5 3.5h7c0-1.5 0-2.5.5-3.5.5-1 1-2 1-3.5a5 5 0 0 0-5-5Z"/><path d="M9 18h6"/><path d="M10 21h4"/></svg>
+        <h3>Business Psychology</h3>
+        <p>Organisational behaviour, psychological safety, talent and culture. Evidence-based people strategy grounded in an MSc earned with a perfect 4.0 GPA, applied to the human systems where governance actually lives or fails.</p>
+      </div>
+      <div class="pillar reveal d2">
+        <div class="pillar-num">02</div>
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M9 9h6M9 13h6M9 17h3"/><circle cx="12" cy="6" r="0.5" fill="currentColor"/></svg>
+        <h3>Anonymisation &amp; Governance</h3>
+        <p>Compliance, data handling, and redaction methodology built from the ground up in one of the most sensitive information environments imaginable. Structural frameworks that protect sensitive data at every point of its lifecycle.</p>
+      </div>
+      <div class="pillar reveal d3">
+        <div class="pillar-num">03</div>
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v18"/><circle cx="6" cy="8" r="3"/><circle cx="18" cy="8" r="3"/><path d="M6 11c0 2 1.5 3 3 3M18 11c0 2-1.5 3-3 3"/></svg>
+        <h3>The Convergence Niche</h3>
+        <p>The Governance-Psychology Gap, my proprietary framework for the space between formal data structures and the human culture that determines whether they are followed. This is the integration few practitioners can offer.</p>
+      </div>
+    </div>
+
+    <p class="bridge-note reveal d2">The firewall is only as strong as the people behind it.<br><strong>I build for both.</strong></p>
+  </div>
+</section>
+
+<!-- ───────── ABOUT ───────── -->
+<section id="about" class="section-pad">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="portrait-frame">
+          <div class="portrait-mono">ACP</div>
+          <span class="portrait-hint">Portrait placeholder</span>
+          <div class="portrait-tag">
+            <div class="name">Ayoola Clarke-Prescott</div>
+            <div class="role">Business Psychologist &middot; Anonymisation Specialist</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-body reveal d1">
+        <span class="eyebrow">About Ayoola</span>
+        <h2>A deliberately <em>multidisciplinary</em> profile.</h2>
+        <p>I am a Behavioural Information Governance Strategist and Business Psychologist based in Trinidad and Tobago. My career has been built at the meeting point of two fields that are almost never combined, and that combination is the whole point.</p>
+        <p>My academic foundation was designed, not accumulated. An <strong>MSc in Business Psychology</strong> gives me the science of motivation, organisational behaviour, and managerial decision-making. A <strong>BSc in Library &amp; Information Science</strong> gives me mastery of knowledge systems, records management, and information governance. A <strong>Legal Studies minor</strong>, completed entirely with A grades, gives me genuine fluency in the legal environment those systems operate within.</p>
+        <p>Together they produce a practitioner-level expertise rarely found in a single professional profile, and a vantage point from which the human and structural sides of data risk can finally be addressed as one.</p>
+
+        <div class="cred-grid">
+          <div class="cred-item">
+            <div class="big">4.0</div>
+            <div class="small">GPA, MSc Business Psychology (Franklin University)</div>
+          </div>
+          <div class="cred-item">
+            <div class="big">Magna<br>Cum Laude</div>
+            <div class="small">BSc Information Science (COSTAATT)</div>
+          </div>
+          <div class="cred-item">
+            <div class="big">10+ yrs</div>
+            <div class="small">Information governance &amp; organisational leadership</div>
+          </div>
+          <div class="cred-item">
+            <div class="big">All A's</div>
+            <div class="small">Legal Studies minor, six law modules</div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-ink">Work With Me <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── JOURNEY / TIMELINE ───────── -->
+<section id="journey" class="section-pad">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">The Trajectory</span>
+      <h2>A foundation built one discipline at a time.</h2>
+      <p>Each stage was chosen to deepen a different layer of the same expertise, behavioural, structural, and legal.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-year">Foundation</div>
+        <h3>Information &amp; Legal Literacy</h3>
+        <p>A BSc in Library &amp; Information Science with a Legal Studies minor, graduated Magna Cum Laude, with a final-year GPA of 4.0. Mastery in knowledge systems, archival science, records management, and the legal frameworks that govern sensitive information.</p>
+      </div>
+      <div class="tl-item reveal d1">
+        <div class="tl-year">Specialisation</div>
+        <h3>Anonymisation Methodology, Built From Scratch</h3>
+        <p>Architected an institutional anonymisation function from the ground up, end-to-end policies, multi-layered access authorisation structures, and staff training programmes, in a high-stakes environment demanding absolute confidentiality.</p>
+      </div>
+      <div class="tl-item reveal d2">
+        <div class="tl-year">Behavioural Science</div>
+        <h3>MSc Business Psychology, 4.0 GPA</h3>
+        <p>A perfect-GPA master's spanning managerial psychology, behavioural economics, organisational coaching, and the psychology of change. The science that explains why people follow governance protocols, or quietly don't.</p>
+      </div>
+      <div class="tl-item reveal d3">
+        <div class="tl-year">Present</div>
+        <h3>Independent Consulting Practice</h3>
+        <p>Bringing all three disciplines together for organisations across the private, public, and professional sectors, through advisory work, diagnostic tools, training, and the Governance-Psychology Gap framework.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── SERVICES ───────── -->
+<section id="services" class="section-pad">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">What I Offer</span>
+      <h2>Advisory across <em>three pillars,</em> and the place they meet.</h2>
+      <p>Engagements are tailored to the organisation, from focused interventions to integrated programmes that work the structural and human sides at once.</p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc-card reveal d1">
+        <span class="svc-tag">Business Psychology</span>
+        <h3>Culture &amp; People Strategy</h3>
+        <p>Organisational behaviour diagnostics, psychological safety development, evidence-based hiring for sensitive roles, leadership coaching, and performance frameworks grounded in behavioural science rather than instinct.</p>
+      </div>
+      <div class="svc-card reveal d2">
+        <span class="svc-tag">Information Governance</span>
+        <h3>Anonymisation &amp; Data Handling</h3>
+        <p>Anonymisation methodology, redaction protocols, access authorisation design, classification systems, and the structural infrastructure that turns a data policy into operational reality, not a decorative document.</p>
+      </div>
+      <div class="svc-card reveal d1">
+        <span class="svc-tag">The Convergence Niche</span>
+        <h3>Governance-Psychology Audits</h3>
+        <p>A diagnostic that examines structure, behaviour, and psychological climate simultaneously, producing a prioritised Governance-Psychology Risk Register showing exactly where an organisation is most exposed and why.</p>
+      </div>
+      <div class="svc-card reveal d2">
+        <span class="svc-tag">Training &amp; Development</span>
+        <h3>Behaviourally Grounded Training</h3>
+        <p>Staff training that goes beyond compliance theatre, drawing on adult learning theory and behavioural economics to build genuine understanding of why data protection matters, with the reinforcement that changes behaviour.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── TOOLS ───────── -->
+<section id="tools" class="section-pad">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Diagnostic Tools</span>
+      <h2>Free instruments that <em>start the conversation.</em></h2>
+      <p>Interactive diagnostics built to give organisations and individuals a clear-eyed read on where they stand, no sign-up required.</p>
+    </div>
+
+    <div class="tool-grid">
+
+      <!-- Featured: Psychological Safety Pulse (LIVE) -->
+      <div class="tool-card featured-tool reveal">
+        <div class="featured-copy">
+          <span class="svc-tag">Featured &middot; Free Tool</span>
+          <h3>Psychological Safety Pulse</h3>
+          <p>An interactive diagnostic measuring five dimensions of psychological safety, voice climate, failure tolerance, inclusion safety, challenge orientation, and interpersonal trust, with a radar visualisation and a named archetype for your result. Pathways for individuals, small businesses, and corporates.</p>
+          <div>
+            <!-- Live Psychological Safety Pulse tool -->
+            <a href="https://ayoolaclarke-prescott.github.io/psychological-safety-pulse.html" class="btn btn-gold">Take the Pulse <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="featured-visual">
+          <svg viewBox="0 0 200 200" width="190" height="190" aria-hidden="true">
+            <polygon points="100,25 160,65 140,150 60,150 40,65" fill="none" stroke="rgba(193,154,62,0.3)" stroke-width="1"/>
+            <polygon points="100,55 135,78 125,128 75,128 65,78" fill="none" stroke="rgba(193,154,62,0.5)" stroke-width="1"/>
+            <polygon points="100,40 148,98 118,140 70,135 52,80" fill="rgba(193,154,62,0.22)" stroke="var(--gold-light)" stroke-width="1.5"/>
+            <circle cx="100" cy="40" r="3" fill="var(--gold-light)"/>
+            <circle cx="148" cy="98" r="3" fill="var(--gold-light)"/>
+            <circle cx="118" cy="140" r="3" fill="var(--gold-light)"/>
+            <circle cx="70" cy="135" r="3" fill="var(--gold-light)"/>
+            <circle cx="52" cy="80" r="3" fill="var(--gold-light)"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Scorecard (COMING SOON) -->
+      <div class="tool-card reveal d1">
+        <div class="tool-top">
+          <div class="tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+          </div>
+          <span class="status soon">Coming Soon</span>
+        </div>
+        <h3>Governance-Psychology Gap Scorecard</h3>
+        <p>A structured self-assessment across five dimensions and twenty questions, measuring the distance between your organisation's formal governance and the human culture meant to uphold it. Launching soon.</p>
+        <!-- TODO: when published, set href to the live Scorecard URL and change class/label to an active link -->
+        <span class="tool-link disabled">Launching Soon</span>
+      </div>
+
+      <!-- Whitepaper as a tool entry (LIVE) -->
+      <div class="tool-card reveal d2">
+        <div class="tool-top">
+          <div class="tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+          </div>
+          <span class="status live">Available</span>
+        </div>
+        <h3>The Governance-Psychology Gap</h3>
+        <p>The foundational thought-leadership report on why Trinidad &amp; Tobago's organisations are exposed, and what to do about it. The argument the rest of this practice is built on.</p>
+        <a href="#authority" class="tool-link">Read the Whitepaper <span>&rarr;</span></a>
+      </div>
+
+      <!-- Resume Intake (LIVE) -->
+      <div class="tool-card reveal d3">
+        <div class="tool-top">
+          <div class="tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+          </div>
+          <span class="status live">Available</span>
+        </div>
+        <h3>Resume Optimisation Intake</h3>
+        <p>A psychology-informed resume strategy service for individual professionals, intake, positioning analysis, and a tailored rewrite across tiers from foundation to executive.</p>
+        <!-- Live Resume Optimisation Intake -->
+        <a href="https://ayoolaclarke-prescott.github.io/resume-optimisation/" class="tool-link">Start Your Intake <span>&rarr;</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────── AUTHORITY / WHITEPAPER ───────── -->
+<section id="authority" class="section-pad">
+  <div class="wrap">
+    <div class="wp-grid">
+      <div class="wp-copy reveal">
+        <span class="eyebrow">Thought Leadership</span>
+        <h2>The whitepaper that <em>names the gap.</em></h2>
+        <p>The Governance-Psychology Gap is the foundational report on the most dangerous exposure in Trinidad &amp; Tobago's corporate landscape, the space between having a data policy and having a data culture. It makes the case that the costliest breaches are behavioural failures before they are technical ones, and lays out what proactive organisations do differently.</p>
+        <p>If you read one thing to understand how I think, make it this.</p>
+        <!-- Live whitepaper PDF on GitHub Pages -->
+        <a href="https://ayoolaclarke-prescott.github.io/Clarke-Prescott_Governance-Psychology-Gap_Whitepaper_2026.pdf" target="_blank" rel="noopener" class="btn btn-gold">Download the Whitepaper <span class="arrow">&rarr;</span></a>
+      </div>
+      <div class="reveal d1">
+        <div class="wp-cover">
+          <div class="wp-cover-inner">
+            <div class="kicker">Thought Leadership Report</div>
+            <div class="ttl">The Governance-Psychology Gap</div>
+            <div class="sub">Why Trinidad &amp; Tobago's Organisations Are Exposed, and What to Do About It</div>
+            <div class="auth">Ayoola Clarke-Prescott<span>MSc Business Psychology</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── CONTACT ───────── -->
+<section id="contact" class="section-pad">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-intro reveal">
+        <span class="eyebrow">Work With Me</span>
+        <h2>Let's close <em>your</em> gap.</h2>
+        <p>For governance audits, organisational training programmes, psychological safety development, executive coaching, or speaking engagements, start the conversation here. Every engagement begins with understanding where you actually stand.</p>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <a href="mailto:ayo.stratminds@gmail.com">ayo.stratminds@gmail.com</a>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://www.linkedin.com/in/ayoola-c-a8816984" target="_blank" rel="noopener">LinkedIn &middot; Ayoola Clarke-Prescott</a>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          <span>Trinidad and Tobago &middot; Available regionally</span>
+        </div>
+      </div>
+
+      <div class="form-card reveal d1">
+        <div class="form-field">
+          <label for="cf-name">Full Name</label>
+          <input type="text" id="cf-name" placeholder="Your name">
+        </div>
+        <div class="form-field">
+          <label for="cf-email">Email Address</label>
+          <input type="email" id="cf-email" placeholder="you@organisation.com">
+        </div>
+        <div class="form-field">
+          <label for="cf-org">Organisation <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--mid);">(optional)</span></label>
+          <input type="text" id="cf-org" placeholder="Where you work">
+        </div>
+        <div class="form-field">
+          <label for="cf-interest">What are you interested in?</label>
+          <select id="cf-interest">
+            <option value="">Select...</option>
+            <option>Governance-Psychology Audit</option>
+            <option>Organisational / staff training</option>
+            <option>Psychological safety development</option>
+            <option>Executive coaching</option>
+            <option>Speaking engagement</option>
+            <option>Resume optimisation service</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" placeholder="Tell me a little about what you're looking for..."></textarea>
+        </div>
+        <button class="btn btn-gold" id="cf-submit" onclick="submitContact()">Send Message <span class="arrow">&rarr;</span></button>
+        <div class="form-status" id="cf-status"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── FOOTER ───────── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="nav-brand">Ayoola Clarke-Prescott<span class="dot">.</span></a>
+        <p>Behavioural Information Governance Strategist and Business Psychologist. Bridging behavioural science, information governance, and legal literacy for organisations that take data stewardship seriously.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="#approach">The Approach</a>
+        <a href="#about">About Ayoola</a>
+        <a href="#services">Services</a>
+        <a href="#tools">Tools</a>
+        <a href="#authority">Whitepaper</a>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <a href="mailto:ayo.stratminds@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/ayoola-c-a8816984" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#contact">Work With Me</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Ayoola Clarke-Prescott. All rights reserved.</span>
+      <span>Business Psychologist &middot; Anonymisation Specialist &middot; Trinidad &amp; Tobago</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Nav scroll state ──
+  const nav = document.getElementById('nav');
+  const onScroll = () => { nav.classList.toggle('scrolled', window.scrollY > 40); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ── Mobile menu ──
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // ── Reveal on scroll ──
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ── Contact form (Formspree) ──
+  async function submitContact() {
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const org = document.getElementById('cf-org').value.trim();
+    const interest = document.getElementById('cf-interest').value;
+    const message = document.getElementById('cf-message').value.trim();
+    const status = document.getElementById('cf-status');
+    const btn = document.getElementById('cf-submit');
+
+    if (!name || !email || !message) {
+      status.className = 'form-status err';
+      status.textContent = 'Please add your name, email, and a short message.';
+      return;
+    }
+
+    btn.style.opacity = '0.6';
+    btn.style.pointerEvents = 'none';
+    status.className = 'form-status';
+    status.textContent = 'Sending...';
+
+    try {
+      // Uses your existing Formspree contact form ID (mpqnojpb)
+      await fetch('https://formspree.io/f/mpqnojpb', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `Website enquiry: ${name}${interest ? ' (' + interest + ')' : ''}`,
+          'Name': name,
+          'Email': email,
+          'Organisation': org || 'Not provided',
+          'Interest': interest || 'Not specified',
+          'Message': message
+        })
+      });
+      status.className = 'form-status ok';
+      status.textContent = 'Thank you. Your message has been sent.';
+      ['cf-name','cf-email','cf-org','cf-message'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('cf-interest').value = '';
+    } catch (err) {
+      console.error(err);
+      status.className = 'form-status err';
+      status.textContent = 'Something went wrong. Please email ayo.stratminds@gmail.com directly.';
+    } finally {
+      btn.style.opacity = '';
+      btn.style.pointerEvents = '';
+    }
+  }
+</script>
+</body>
+</html>

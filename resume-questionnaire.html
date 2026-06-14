@@ -1128,21 +1128,20 @@
   <!-- LOADING -->
   <div class="loading-wrap" id="loading-wrap">
     <div class="spinner"></div>
-    <p>Analysing your profile against hiring intelligence...</p>
+    <p>Submitting your information...</p>
   </div>
 
-  <!-- RESULTS PANEL -->
+  <!-- <!-- CONFIRMATION PANEL -->
   <div id="results-panel">
     <div class="hero" style="margin-top:0; margin-bottom:2rem;">
-      <div class="hero-eyebrow">Preliminary Analysis Complete</div>
-      <h1 style="font-size:2rem;">Your Resume <em>Strategy Report</em></h1>
-      <p>Based on your responses, the following recommendations have been generated. These will guide the optimisation of your resume.</p>
+      <div class="hero-eyebrow">Intake Received</div>
+      <h1 style="font-size:2rem;">Thank You, <em><span id="confirmation-name"></span></em></h1>
+      <p>Your information has been received and will be reviewed personally. Your optimised resume will be returned to you within your requested turnaround.</p>
       <div class="divider"></div>
     </div>
-    <div id="ai-results-content"></div>
     <div class="result-card" style="border-left-color: var(--ink); text-align:center; padding: 1.8rem;">
-      <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--ink);">Your completed intake and preliminary analysis will be reviewed personally by Ayoola Clarke-Prescott. You will receive your optimised resume within the requested timeframe.</p>
-      <p style="margin-top:0.8rem; font-size:0.8rem; color:var(--mid);">For enquiries: <strong style="color:var(--gold);">consulting@ayoolaclarke-prescott.com</strong></p>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--ink);">Your completed intake will be reviewed personally by Ayoola Clarke-Prescott. You will receive your optimised resume within the requested timeframe.</p>
+      <p style="margin-top:0.8rem; font-size:0.8rem; color:var(--mid);">For enquiries: <strong style="color:var(--gold);">ayo.stratminds@gmail.com</strong></p>
     </div>
   </div>
 
@@ -1330,7 +1329,48 @@ function collectFormData() {
     referral:           document.getElementById('referral').value                 || 'Not specified',
     submittedAt:        new Date().toLocaleString('en-TT', { timeZone: 'America/Port_of_Spain' })
   };
-}
+} // ─────────────────────────────────────────────
+// SEND INTAKE TO EMAIL (Formspree)
+// ─────────────────────────────────────────────
+async function sendIntakeEmail(data) {
+  try {
+    await fetch('https://formspree.io/f/mpqnojpb', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: `Resume Intake: ${data.name} (${data.targetRole})`,
+        'Full Name': data.name,
+        'Email': data.email,
+        'Phone': data.phone,
+        'Country': data.country,
+        'LinkedIn': data.linkedin,
+        'Target Role': data.targetRole,
+        'Target Industry': data.targetIndustry,
+        'Career Objective': data.careerObjective,
+        'Employment Intent': data.employmentIntent,
+        'Urgency 1-10': data.urgency,
+        'Highest Qualification': data.highestQual,
+        'Years of Experience': data.yearsExp,
+        'Top Accomplishments': data.accomplishments,
+        'Certifications': data.certifications,
+        'Key Differentiator': data.differentiator,
+        'Core Skills': data.skills,
+        'Resume Effectiveness': data.resumeEffectiveness,
+        'Resume Problems': data.resumeProblems,
+        'Main Goal': data.mainWant,
+        'Additional Context': data.extraContext,
+        'Turnaround Requested': data.turnaround,
+        'Referral Source': data.referral,
+        'Submitted At': data.submittedAt
+      })
+    });
+  } catch (err) {
+    console.error('Intake email failed to send:', err);
+  }
+} 
 
 // ─────────────────────────────────────────────
 // BUILD AI PROMPTS
@@ -1459,23 +1499,22 @@ async function submitForm() {
   document.getElementById('loading-wrap').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  try {
-    // Run both AI calls in parallel
-    const [analysisText, resumeText] = await Promise.all([
-      callAI(analysisPrompt(data), 1200),
-      callAI(resumeDraftPrompt(data), 2000)
-    ]);
+  await sendIntakeEmail(data);
 
-    document.getElementById('loading-wrap').style.display = 'none';
-    renderResults(analysisText, resumeText, data);
+  document.getElementById('loading-wrap').style.display = 'none';
+  renderConfirmation(data);
+} function renderConfirmation(data) {
+  document.getElementById('confirmation-name').textContent = data.name;
+  document.getElementById('results-panel').style.display = 'block';
 
-  } catch (err) {
-    console.error(err);
-    document.getElementById('loading-wrap').style.display = 'none';
-    renderFallback(data);
-  }
+  document.querySelectorAll('.progress-label').forEach(el => {
+    el.classList.remove('active');
+    el.classList.add('done');
+  });
+  document.getElementById('progress-fill').style.width = '100%';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 // ─────────────────────────────────────────────
 // RENDER CLIENT-FACING ANALYSIS
 // ─────────────────────────────────────────────

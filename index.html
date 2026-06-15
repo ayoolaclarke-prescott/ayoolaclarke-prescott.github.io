@@ -615,6 +615,23 @@
   .wp-cover .auth { margin-top: auto; font-size: 0.72rem; color: var(--navy); font-weight: 600; letter-spacing: 0.04em; }
   .wp-cover .auth span { display: block; font-weight: 400; color: var(--mid); font-size: 0.66rem; margin-top: 0.2rem; letter-spacing: 0.08em; text-transform: uppercase; }
 
+  /* ───────── PAPER PAIR (two papers side by side) ───────── */
+  #authority .section-head h2 { color: var(--cream); }
+  #authority .section-head h2 em { color: var(--gold-light); }
+  #authority .section-head p { color: rgba(250,246,238,0.72); }
+  #authority .eyebrow { color: var(--gold-light); }
+  #authority .eyebrow::before, #authority .eyebrow.center::after { background: var(--gold-light); }
+
+  .paper-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; margin-top: 1rem; }
+  .paper-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .paper-item .wp-cover { margin: 0 auto 2rem; }
+  .wp-cover.alt { transform: rotate(3deg); }
+  .wp-cover.alt:hover { transform: rotate(0deg) scale(1.02); }
+  .paper-meta { max-width: 25rem; }
+  .paper-meta h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 600; color: var(--cream); line-height: 1.2; margin-bottom: 0.6rem; }
+  .paper-meta h3 em { font-style: italic; color: var(--gold-light); }
+  .paper-meta p { font-size: 0.9rem; color: rgba(250,246,238,0.7); line-height: 1.75; font-weight: 300; margin-bottom: 1.6rem; }
+
   /* ───────── CONTACT ───────── */
   #contact { background: var(--cream); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
@@ -658,7 +675,7 @@
 
   /* ───────── RESPONSIVE ───────── */
   @media (max-width: 920px) {
-    .hero-grid, .about-grid, .wp-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-grid, .about-grid, .wp-grid, .paper-pair, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .convergence { max-width: 340px; }
     .hero { padding-top: 8rem; }
     .pillars, .svc-grid, .tool-grid { grid-template-columns: 1fr; }
@@ -700,7 +717,7 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#tools">Tools</a>
-    <a href="#authority">Whitepaper</a>
+    <a href="#authority">Papers</a>
     <a href="#contact" class="nav-cta">Work With Me</a>
   </div>
 </nav>
@@ -968,6 +985,19 @@
         <a href="#authority" class="tool-link">Read the Whitepaper <span>&rarr;</span></a>
       </div>
 
+      <!-- Continuity Architecture companion paper (LIVE) -->
+      <div class="tool-card reveal d3">
+        <div class="tool-top">
+          <div class="tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+          </div>
+          <span class="status live">Available</span>
+        </div>
+        <h3>The Continuity Architecture</h3>
+        <p>The companion paper. Why succession and retention planning are possible, and essential, in mixed-employment organisations, even under public service rules.</p>
+        <a href="#authority" class="tool-link">Read the Paper <span>&rarr;</span></a>
+      </div>
+
       <!-- Resume Intake (LIVE) -->
       <div class="tool-card reveal d3">
         <div class="tool-top">
@@ -986,19 +1016,19 @@
   </div>
 </section>
 
-<!-- ───────── AUTHORITY / WHITEPAPER ───────── -->
+<!-- ───────── AUTHORITY / PAPERS ───────── -->
 <section id="authority" class="section-pad">
   <div class="wrap">
-    <div class="wp-grid">
-      <div class="wp-copy reveal">
-        <span class="eyebrow">Thought Leadership</span>
-        <h2>The whitepaper that <em>names the gap.</em></h2>
-        <p>The Governance-Psychology Gap is the foundational report on the most dangerous exposure in Trinidad &amp; Tobago's corporate landscape, the space between having a data policy and having a data culture. It makes the case that the costliest breaches are behavioural failures before they are technical ones, and lays out what proactive organisations do differently.</p>
-        <p>If you read one thing to understand how I think, make it this.</p>
-        <!-- Live whitepaper PDF on GitHub Pages -->
-        <a href="https://ayoolaclarke-prescott.github.io/Clarke-Prescott_Governance-Psychology-Gap_Whitepaper_2026.pdf" target="_blank" rel="noopener" class="btn btn-gold">Download the Whitepaper <span class="arrow">&rarr;</span></a>
-      </div>
-      <div class="reveal d1">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Thought Leadership</span>
+      <h2>Two papers. <em>One argument.</em></h2>
+      <p>The Governance-Psychology Gap names the most dangerous exposure in Trinidad &amp; Tobago's organisations, the space between a data policy and a data culture. The Continuity Architecture applies that same lens to succession and retention. Read them together.</p>
+    </div>
+
+    <div class="paper-pair">
+
+      <!-- Paper 1: flagship whitepaper -->
+      <div class="paper-item reveal d1">
         <div class="wp-cover">
           <div class="wp-cover-inner">
             <div class="kicker">Thought Leadership Report</div>
@@ -1007,7 +1037,32 @@
             <div class="auth">Ayoola Clarke-Prescott<span>MSc Business Psychology</span></div>
           </div>
         </div>
+        <div class="paper-meta">
+          <h3>The Governance-Psychology Gap</h3>
+          <p>The foundational report. Why the costliest breaches are behavioural failures before they are technical ones, and what proactive organisations do differently.</p>
+          <!-- Live whitepaper PDF on GitHub Pages -->
+          <a href="https://ayoolaclarke-prescott.github.io/Clarke-Prescott_Governance-Psychology-Gap_Whitepaper_2026.pdf" target="_blank" rel="noopener" class="btn btn-gold">Download <span class="arrow">&rarr;</span></a>
+        </div>
       </div>
+
+      <!-- Paper 2: companion paper -->
+      <div class="paper-item reveal d2">
+        <div class="wp-cover alt">
+          <div class="wp-cover-inner">
+            <div class="kicker">Companion Paper</div>
+            <div class="ttl">The Continuity Architecture</div>
+            <div class="sub">Why Succession and Retention Planning Are Possible, and Essential, in Mixed-Employment Organisations</div>
+            <div class="auth">Ayoola Clarke-Prescott<span>MSc Business Psychology</span></div>
+          </div>
+        </div>
+        <div class="paper-meta">
+          <h3>The Continuity Architecture</h3>
+          <p>The companion paper. Why succession and retention planning are not only possible under public service rules and mixed employment types, but essential.</p>
+          <!-- Live companion paper PDF on GitHub Pages -->
+          <a href="https://ayoolaclarke-prescott.github.io/Clarke-Prescott_ContinuityArchitecture_Whitepaper_2026.pdf" target="_blank" rel="noopener" class="btn btn-gold">Download <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1085,7 +1140,7 @@
         <a href="#about">About Ayoola</a>
         <a href="#services">Services</a>
         <a href="#tools">Tools</a>
-        <a href="#authority">Whitepaper</a>
+        <a href="#authority">Papers</a>
       </div>
       <div class="foot-col">
         <h4>Connect</h4>
